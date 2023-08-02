@@ -31,7 +31,7 @@ public class TrustOkHttpClientUtil {
                             return new java.security.cert.X509Certificate[]{};
                         }
                     }
-            };
+            };//
 
             // Install the all-trusting trust manager
             final SSLContext sslContext = SSLContext.getInstance("SSL");
