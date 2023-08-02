@@ -39,8 +39,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="지출"
-            android:textSize="25dp"
-            android:layout_marginStart="20dp"
+            android:textSize="15dp"
+            android:layout_marginStart="25dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -50,7 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="13500원"
-            android:textSize="25dp"
+            android:textSize="15dp"
+            android:textColor="#4600A3"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,9 +73,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="수입"
-            android:textSize="25dp"
-            android:layout_marginStart="20dp"
+            android:text="저축"
+            android:textSize="15dp"
+            android:layout_marginStart="25dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -83,7 +84,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0원"
-            android:textSize="25dp"
+            android:textSize="15dp"
+            android:textColor="#FFC536"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이번달 남은 예산은 X원이에요 \n 너무 잘하고 있어요!"
-                android:textSize="20dp"
+                android:textSize="14dp"
                 android:gravity="center"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -172,6 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -180,24 +183,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#FF6161"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_food"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="식비"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -214,9 +219,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -227,6 +232,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -235,24 +241,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#FF9F69"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_snack"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="카페/간식"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -269,9 +277,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -281,6 +289,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -289,24 +298,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#FFF069"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_mart"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="편의점/마트"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -323,9 +334,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -336,6 +347,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -344,24 +356,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#ABFF69"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_alchol"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="술/유흥"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -378,9 +392,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -391,6 +405,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -399,24 +414,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#69FFC9"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_shopping"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="쇼핑"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -433,9 +450,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -446,6 +463,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -454,24 +472,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#69F6FF"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_hobby"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="취미/여가"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -488,9 +508,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -501,6 +521,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -509,24 +530,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#69C9FF"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_health"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="건강"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -543,9 +566,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -556,6 +579,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -564,24 +588,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#6C69FF"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_living"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="주거/통신"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -598,9 +624,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -610,6 +636,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -618,24 +645,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#AB69FF"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_fund"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="보험/금융"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -652,9 +681,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -665,6 +694,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -673,24 +703,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#EA69FF"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_beauty"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="미용"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -707,9 +739,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -720,6 +752,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -728,24 +761,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#1F009C"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_transport"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="교통"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -762,9 +797,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -775,6 +810,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -783,24 +819,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#00C8D5"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_trip"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="여행/숙박"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -817,9 +855,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -830,6 +868,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -838,24 +877,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#00D562"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_education"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="교육"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -872,9 +913,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -885,6 +926,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -893,24 +935,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#B10020"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_bank"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="저축/투자"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -927,9 +971,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -940,6 +984,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_marginTop="15dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
@@ -948,24 +993,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="66%"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    android:textColor="#727272"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="24dp"/>
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/img_category_etc"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="기타"
-                    android:textSize="20dp"
-                    android:layout_gravity="center"/>
+                    android:textSize="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="13dp"/>
 
                 <View
 
@@ -982,9 +1029,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9,000원"
-                    android:textSize="25dp"
+                    android:textSize="16dp"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="24dp"/>
 
 
             </LinearLayout>
@@ -1002,6 +1049,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="자세히보기>"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

@@ -2,13 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/menu_accountmemoplus"
-        android:title="a"
-        android:icon="@drawable/button_account_memo"
-        app:showAsAction="ifRoom">
 
-    </item>
 
 
     <item
@@ -27,6 +21,14 @@
                 android:id="@+id/menu_setbudget"
                 android:title="예산 설정" />
         </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_accountmemoplus"
+        android:title="a"
+        android:icon="@drawable/button_account_memo"
+        app:showAsAction="ifRoom">
+
     </item>
 
 

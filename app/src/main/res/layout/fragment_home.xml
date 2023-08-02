@@ -8,52 +8,71 @@
     tools:context=".HomeFragment"
     android:background="#f5f5f5">
 
-    <androidx.appcompat.widget.Toolbar
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbar_home"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#4600A3"
-        app:title="동네친구"
-        app:titleTextColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:text="동네친구"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/tv_accountbookPreview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20px"
         android:layout_marginHorizontal="20px"
-        android:background="@drawable/mypage_profiile"
+        android:layout_marginTop="20px"
+        android:background="@drawable/rectangle_mypage"
         app:layout_constraintBottom_toTopOf="@+id/TV_HotPlace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_home"
         app:layout_constraintVertical_weight="171" />
 
-    <TextView
-            android:id="@+id/tv_accountbookPreview_Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="가계부미리보기"
-            android:textSize="40px"
-            app:layout_constraintTop_toTopOf="@+id/tv_accountbookPreview"
-            app:layout_constraintStart_toStartOf="@id/tv_accountbookPreview"
-            android:layout_marginStart="40px"
-            android:layout_marginTop="20px" />
 
-        <TextView
-            android:id="@+id/tv_budget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_accountbookPreview_Title"
-            app:layout_constraintStart_toStartOf="@id/tv_accountbookPreview"
-            android:text="이번달예산"
-            android:textSize="50px"
-            android:layout_marginStart="40px"
-            android:layout_marginVertical="50px" />
+    <TextView
+        android:id="@+id/tv_budget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="17dp"
+        android:text="이번달 예산"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/tv_accountbookPreview"
+        app:layout_constraintTop_toTopOf="@+id/tv_accountbookPreview" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,22 +90,22 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/tv_budget"
             app:layout_constraintStart_toStartOf="@id/tv_accountbookPreview"
-
             android:text="지출"
-            android:textSize="50px"
-            android:layout_marginStart="40px"
-            android:layout_marginVertical="50px" />
+            android:textSize="15dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="25dp"/>
 
-        <TextView
-            android:id="@+id/tv_paymentSize"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="13.500원"
-            android:textSize="50px"
-            app:layout_constraintTop_toTopOf="@id/tv_payment"
-            app:layout_constraintEnd_toStartOf="@id/tv_bank"
-            app:layout_constraintStart_toEndOf="@id/tv_budget"
-            android:textColor="#9932cc" />
+    <TextView
+        android:id="@+id/tv_paymentSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13.500원"
+        android:textColor="#4600A3"
+        android:textStyle="bold"
+        android:layout_marginTop="69dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_payment"
+        app:layout_constraintTop_toTopOf="@+id/tv_accountbookPreview" />
 
         <TextView
             android:id="@+id/tv_bank"
