@@ -2,6 +2,7 @@ package com.example.dongnaefriend_android
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +25,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(Binding.root)
 
 
+        Binding.ivKakaologin.setOnClickListener{
+            var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=496d0f95e625e90a64a2ffdaaba58120&redirect_uri=http://dongnae.shop/callback"))
+            startActivity(intent)
+
+
+
+        }
+
+        Binding.btnStart.setOnClickListener{
+            val intent = Intent(this,HomeActivity::class.java)
+
+            startActivity(intent)
+        }
+
+
+
+
+
+        /*
         //https://jdroid.tistory.com/10 참고하여 구현하였음(카카오로그인)
         //토큰 여부 확인
         if (AuthApiClient.instance.hasToken()) {
@@ -115,5 +135,8 @@ class MainActivity : AppCompatActivity() {
         } else {
             UserApiClient.instance.loginWithKakaoAccount(this, callback = mCallback) // 카카오 이메일 로그인
         }
+
+
+         */
     }
 }

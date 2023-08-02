@@ -15,7 +15,7 @@ class PaymentPlus2Activity : AppCompatActivity() {
 
         //닫기 버튼
         binding.imageviewPaymentclose2.setOnClickListener{
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
         //뒤로가기 버튼

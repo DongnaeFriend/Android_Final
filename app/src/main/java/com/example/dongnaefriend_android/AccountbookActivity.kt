@@ -1,33 +1,12 @@
 package com.example.dongnaefriend_android
 
-import android.accounts.AccountManager.get
-import android.app.Dialog
-import android.content.Context
 import android.content.Intent
-import android.graphics.Point
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.view.WindowManager
-import android.widget.ActionMenuView
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.ListView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.dongnaefriend_android.databinding.ActivityAccountbookBinding
-import com.example.dongnaefriend_android.databinding.FragmentMyaccountBinding
-import java.time.Year
-import java.util.IdentityHashMap
 
 class AccountbookActivity : AppCompatActivity(){
 
@@ -117,7 +96,7 @@ class AccountbookActivity : AppCompatActivity(){
             setOnItemSelectedListener {
                 when(it.itemId){
                     R.id.menu_home ->{
-                        val intent = Intent(context,HomeActivity::class.java)
+                        val intent = Intent(context, HomeActivity::class.java)
 
 
                         context.startActivity(intent)
@@ -125,7 +104,7 @@ class AccountbookActivity : AppCompatActivity(){
 
                     }
                     R.id.menu_commnunity ->{
-                        val intent = Intent(context,HomeActivity::class.java)
+                        val intent = Intent(context, HomeActivity::class.java)
 
                         intent.putExtra("text",2)
                         context.startActivity(intent)
@@ -134,7 +113,7 @@ class AccountbookActivity : AppCompatActivity(){
 
                     }
                     R.id.menu_dongnaeinformation ->{
-                        val intent = Intent(context,HomeActivity::class.java)
+                        val intent = Intent(context, HomeActivity::class.java)
 
                         intent.putExtra("text",3)
                         context.startActivity(intent)
@@ -147,7 +126,7 @@ class AccountbookActivity : AppCompatActivity(){
 
                     }
                     R.id.menu_mypage ->{
-                        val intent = Intent(context,HomeActivity::class.java)
+                        val intent = Intent(context, HomeActivity::class.java)
 
                         intent.putExtra("text",5)
                         context.startActivity(intent)
@@ -192,7 +171,7 @@ class AccountbookActivity : AppCompatActivity(){
             }
             R.id.menu_incomeplus ->{
 
-                val intent = Intent(this,IncomePlusActivity::class.java)
+                val intent = Intent(this, IncomePlusActivity::class.java)
 
                 startActivity(intent)
 
@@ -204,7 +183,7 @@ class AccountbookActivity : AppCompatActivity(){
 
             R.id.menu_paymentplus -> {
 
-                    val intent = Intent(this,PaymentPlus1Activity::class.java)
+                    val intent = Intent(this, PaymentPlus1Activity::class.java)
 
                     startActivity(intent)
 
@@ -213,7 +192,7 @@ class AccountbookActivity : AppCompatActivity(){
             }
             R.id.menu_setbudget ->{
 
-                val intent = Intent(this,SetBudgetActivity::class.java)
+                val intent = Intent(this, SetBudgetActivity::class.java)
 
                 startActivity(intent)
 

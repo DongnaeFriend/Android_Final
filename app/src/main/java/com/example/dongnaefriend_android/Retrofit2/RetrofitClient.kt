@@ -1,10 +1,13 @@
-package com.example.dongnaefriend_android
+package com.example.dongnaefriend_android.Retrofit2
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.net.ssl.SSLContext
+import javax.net.ssl.TrustManagerFactory
+import javax.net.ssl.X509TrustManager
 
 object RetrofitClient {
     private var instance: Retrofit? = null
@@ -18,17 +21,22 @@ object RetrofitClient {
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
 
             // OKHttpClient에 로깅인터셉터 등록
-            val client = OkHttpClient.Builder()
+            /*val client = OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .connectTimeout(CONNECT_TIMEOUT_SEC, TimeUnit.SECONDS)
                 .build()
+             */
+            val client = TrustOkHttpClientUtil.getUnsafeOkHttpClient().build()
+
+
 
             instance = Retrofit.Builder()
-                .baseUrl("http://dongnae.shop/callback/")
+                .baseUrl("https://dongnae.shop/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client) // Retrofit 객체에 OkHttpClient 적용
                 .build()
         }
         return instance!!
     }
+
 }

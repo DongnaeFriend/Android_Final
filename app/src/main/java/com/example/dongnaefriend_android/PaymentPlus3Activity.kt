@@ -13,7 +13,7 @@ class PaymentPlus3Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.imageviewPaymentclose3.setOnClickListener {
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
 
@@ -23,15 +23,15 @@ class PaymentPlus3Activity : AppCompatActivity() {
         }
 
         binding.imageviewPaymentmethodCash.setOnClickListener {
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
         binding.imageviewPaymentmethodCheckcard.setOnClickListener {
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
         binding.imageviewPaymentmethodCrditcard.setOnClickListener {
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
     }

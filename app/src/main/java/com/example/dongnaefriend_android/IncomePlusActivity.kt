@@ -1,9 +1,7 @@
 package com.example.dongnaefriend_android
 
-import android.app.Activity
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.dongnaefriend_android.databinding.ActivityIncomePlusBinding
@@ -22,11 +20,11 @@ class IncomePlusActivity : AppCompatActivity() {
         }
 
         binding.imageviewIncomegoback1.setOnClickListener {
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
         binding.imageviewIncomeclose1.setOnClickListener{
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
 
