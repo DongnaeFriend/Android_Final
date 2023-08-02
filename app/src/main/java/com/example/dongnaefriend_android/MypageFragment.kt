@@ -53,5 +53,13 @@ class MypageFragment : Fragment() {
             parentFragmentManager.beginTransaction().replace(R.id.container_fragment,MypageProfileFragment()).commit()
         }
 
+        binding.btnSetting.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.container_fragment,MypageSettingFragment()).commit()
+        }
+
+        binding.btnMyetc.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(R.id.container_fragment,MypageCertifyFragment()).commit()
+        }
+
     }
 }

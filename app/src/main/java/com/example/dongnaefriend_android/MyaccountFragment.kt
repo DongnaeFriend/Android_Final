@@ -81,7 +81,7 @@ class MyaccountFragment : Fragment() {
 
                 if (position ==  spinnerPosition){
                     if (setBudget<expesion){
-                        myAccountText2 = "이번달 예산을 ${abs(setBudget-expesion)}만큼 초과했어요.\n절약이 절실해요"
+                        myAccountText2 = "이번 달 예산을 ${abs(setBudget-expesion)}만큼 초과했어요.\n절약이 절실해요"
                         binding.tvLeftbudget.text = myAccountText2
                     }
                     else{
