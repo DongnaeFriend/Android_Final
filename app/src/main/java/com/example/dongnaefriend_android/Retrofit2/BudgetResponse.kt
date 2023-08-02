@@ -1,4 +1,4 @@
-package com.example.dongnaefriend_android
+package com.example.dongnaefriend_android.Retrofit2
 
 import com.google.gson.annotations.SerializedName
 
@@ -8,7 +8,6 @@ data class BudgetResponse(
     @SerializedName("message") val message: String,
     @SerializedName("data") val data: List<Data>
 ) {
-    //
     data class Data(
         @SerializedName("budget") val budget: Int,
     )

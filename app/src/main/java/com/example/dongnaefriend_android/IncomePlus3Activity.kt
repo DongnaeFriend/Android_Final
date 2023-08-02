@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.dongnaefriend_android.databinding.ActivityIncomePlus3Binding
-import com.example.dongnaefriend_android.databinding.ActivityPaymentPlus3Binding
 
 private lateinit var binding:ActivityIncomePlus3Binding
 
@@ -15,7 +14,7 @@ class IncomePlus3Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.imageviewIncomeclose3.setOnClickListener {
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
 
@@ -25,15 +24,15 @@ class IncomePlus3Activity : AppCompatActivity() {
         }
 
         binding.imageviewIncomemethodCash.setOnClickListener {
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
         binding.imageviewIncomemethodCheckcard.setOnClickListener {
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
         binding.imageviewIncomemethodCrditcard.setOnClickListener {
-            val intent = Intent(this,AccountbookActivity::class.java)
+            val intent = Intent(this, AccountbookActivity::class.java)
             startActivity(intent)
         }
     }
