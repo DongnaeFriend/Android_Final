@@ -6,68 +6,97 @@
     android:layout_height="match_parent"
     tools:context=".IncomePlus3Activity">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/const_incomeplustopbar3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="41dp">
 
         <ImageView
             android:id="@+id/imageview_incomegoback3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/button_goback"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/button_goback"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4,500"
+                android:textSize="21dp"
+                android:textStyle="bold"
+                android:textColor="#4600a3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원"
+                android:textSize="21dp" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageview_incomeclose3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/button_close"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/btn_incomeclose"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="20dp"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageview_incomemethod_cash"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/btn_cash"
-        app:layout_constraintTop_toBottomOf="@id/const_incomeplustopbar3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="100dp"
-        app:layout_constraintBottom_toTopOf="@id/imageview_incomemethod_checkcard"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="2"/>
-
-    <ImageView
-        android:id="@+id/imageview_incomemethod_checkcard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/btn_checkcard"
-        app:layout_constraintTop_toBottomOf="@id/imageview_incomemethod_cash"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/imageview_incomemethod_crditcard"
-        app:layout_constraintVertical_weight="1"/>
-
-    <ImageView
-        android:id="@+id/imageview_incomemethod_crditcard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/btn_creditcard"
-        app:layout_constraintTop_toBottomOf="@id/imageview_incomemethod_checkcard"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_weight="2"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/const_incomeplustopbar3">
+
+
+        <ImageView
+            android:id="@+id/imageview_incomemethod_cash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_cash"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageview_incomemethod_checkcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_checkcard"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/imageview_incomemethod_cash"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageview_incomemethod_crditcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/btn_creditcard"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toBottomOf="@id/imageview_incomemethod_checkcard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
