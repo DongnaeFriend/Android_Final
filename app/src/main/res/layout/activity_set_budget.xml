@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetBudgetActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_setBudgetToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/layout_border_style">
+
+        <ImageView
+            android:id="@+id/iv_setBudgetGoBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/button_goback"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "예산 설정"
+            android:textSize="25dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_setBudgetSave"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/btn_save"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="15dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_setBudget1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이번달 예산을 입력해주세요."
+        android:textSize="25dp"
+        app:layout_constraintTop_toBottomOf="@id/const_setBudgetToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_setBudget2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="지난날보다 절약해보는건 어떨까요?불"
+        android:textSize="19dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_setBudget1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="40dp"/>
+
+    <LinearLayout
+        android:id="@+id/linear_setbudget1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_setBudget2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5월 지출액은"
+            android:textSize="19dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_lastmonthpayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="'570,300원'"
+            android:textColor="#ffd700"
+            android:textSize="19dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="입니다."
+            android:textSize="19dp"
+            />
+
+
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/et_setbudget"
+        android:layout_width="312dp"
+        android:layout_height="69dp"
+        android:text=""
+        android:textSize="50sp"
+        android:textColor="#4600A3"
+        app:layout_constraintTop_toBottomOf="@id/linear_setbudget1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+
+        />
+
+
+    <TextView
+        android:id="@+id/tv_setBudget3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="하루에 대략"
+        app:layout_constraintTop_toBottomOf="@id/et_setbudget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="40dp"
+        android:textSize="19dp"/>
+
+    <LinearLayout
+        android:id="@+id/linear_setbudget2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_setBudget3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/tv_budgetperday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16,666원"
+            android:textColor="#4600A3"
+            android:textSize="19dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="을 사용할 수 있어요!"
+            android:textSize="19dp"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

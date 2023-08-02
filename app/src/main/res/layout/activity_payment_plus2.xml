@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentPlus2Activity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_paymentplustopbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/imageview_paymentgoback2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/button_goback"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4500"
+                android:textSize="21dp"
+                android:textColor="#4600a3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원"
+                android:textSize="21dp" />
+
+        </LinearLayout>
+
+
+
+        <ImageView
+            android:id="@+id/imageview_paymentclose2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/button_close"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/edittext_paymentplusmemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="       메모"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/const_paymentplustopbar2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="25dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_paymentcategory1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_paymentplusmemo"
+        android:layout_marginHorizontal="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_food"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_food"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imageview_accountcategory_snack"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="식비"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_food"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_food"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_food"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_snack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_snack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_food"
+            app:layout_constraintEnd_toStartOf="@+id/imageview_accountcategory_mart"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카페/간식"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_snack"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_snack"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_snack"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_mart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_mart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_snack"
+            app:layout_constraintEnd_toStartOf="@id/imageview_accountcategory_alchol"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="편의점/마트"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_mart"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_mart"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_mart"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_alchol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_alchol"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_mart"
+            app:layout_constraintEnd_toStartOf="@id/imageview_accountcategory_shopping"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="술/유흥"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_alchol"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_alchol"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_alchol" />
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_shopping"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_shopping"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_alchol"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="쇼핑"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_shopping"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_shopping"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_shopping"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_paymentcategory2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/const_paymentcategory1"
+        android:layout_marginHorizontal="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_hobby"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_hobby"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imageview_accountcategory_health"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취미/여가"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_hobby"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_hobby"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_hobby"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_health"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_health"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_hobby"
+            app:layout_constraintEnd_toStartOf="@+id/imageview_accountcategory_living"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="건강"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_health"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_health"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_health"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_living"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_living"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_health"
+            app:layout_constraintEnd_toStartOf="@id/imageview_accountcategory_fund"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주거/통신"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_living"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_living"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_living"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_fund"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_fund"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_living"
+            app:layout_constraintEnd_toStartOf="@id/imageview_accountcategory_beauty"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보험/금융"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_fund"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_fund"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_fund"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_beauty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_beauty"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_fund"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="미용"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_beauty"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_beauty"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_beauty"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/const_paymentcategory2"
+        android:layout_marginHorizontal="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_transport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_transport"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imageview_accountcategory_trip"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="교통"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_transport"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_transport"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_transport"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_trip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_trip"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_transport"
+            app:layout_constraintEnd_toStartOf="@+id/imageview_accountcategory_education"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여행/숙박"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_trip"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_trip"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_trip"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_education"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_education"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_trip"
+            app:layout_constraintEnd_toStartOf="@id/imageview_accountcategory_bank"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="교육"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_education"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_education"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_education"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_bank"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_bank"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_education"
+            app:layout_constraintEnd_toStartOf="@id/imageview_accountcategory_etc"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저축/투자"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_bank"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_bank"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_bank"/>
+
+        <ImageView
+            android:id="@+id/imageview_accountcategory_etc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_category_etc"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageview_accountcategory_bank"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            android:layout_marginHorizontal="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기타"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@id/imageview_accountcategory_etc"
+            app:layout_constraintEnd_toEndOf="@id/imageview_accountcategory_etc"
+            app:layout_constraintTop_toBottomOf="@id/imageview_accountcategory_etc"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

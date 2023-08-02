@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_accountmemoplus"
+        android:title="a"
+        android:icon="@drawable/button_account_memo"
+        app:showAsAction="ifRoom">
+
+    </item>
+
+
+    <item
+        android:id="@+id/menu_accountplus"
+        android:title="a"
+        android:icon="@drawable/button_account_plus"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/menu_paymentplus"
+                android:title="지출내역 추가" />
+            <item
+                android:id="@+id/menu_incomeplus"
+                android:title="수입내역 추가" />
+            <item
+                android:id="@+id/menu_setbudget"
+                android:title="예산 설정" />
+        </menu>
+    </item>
+
+
+</menu>

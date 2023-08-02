@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".DongnaeHomeFragment">
+
+    <ImageView
+        android:id="@+id/imageView_home_rectangle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home_rectangle"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/textView_home_description"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="      이번주 전농동에서\n      가장 인기있는 글들을 구경해보세요!💫"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:layout_marginTop="28.63dp"
+        android:layout_marginStart="45dp"
+
+        />
+
+
+</FrameLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IncomePlus3Activity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_incomeplustopbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/imageview_incomegoback3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/button_goback"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"/>
+
+
+        <ImageView
+            android:id="@+id/imageview_incomeclose3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/button_close"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageview_incomemethod_cash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_cash"
+        app:layout_constraintTop_toBottomOf="@id/const_incomeplustopbar3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toTopOf="@id/imageview_incomemethod_checkcard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="2"/>
+
+    <ImageView
+        android:id="@+id/imageview_incomemethod_checkcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_checkcard"
+        app:layout_constraintTop_toBottomOf="@id/imageview_incomemethod_cash"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imageview_incomemethod_crditcard"
+        app:layout_constraintVertical_weight="1"/>
+
+    <ImageView
+        android:id="@+id/imageview_incomemethod_crditcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_creditcard"
+        app:layout_constraintTop_toBottomOf="@id/imageview_incomemethod_checkcard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_weight="2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

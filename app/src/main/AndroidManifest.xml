@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".GlobalApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DongnaeFriend_Android"
+        tools:targetApi="31">
+        <!-- DongnaeInformationActivity 추가 -->
+        <!--activity android:name=".DongnaeInformationActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-->
+
+        <activity
+            android:name=".BasicSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IncomePlus3Activity"
+            android:exported="false" />
+        <!--activity
+            android:name=".activity_dongnae_home"
+            android:exported="false"
+            android:label="@string/title_activity_dongnae_home"
+            android:theme="@style/Theme.DongnaeFriend_Android" /-->
+
+        <activity
+            android:name=".IncomePlus2Activity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MyAccountDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SetBudgetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IncomePlusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentPlus3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentPlus2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentPlus1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MemoDialog"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
+        <activity
+            android:name=".AccountbookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakaofbcc2cec3ee2f053b6b317750ef0538e" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
