@@ -16,13 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DongnaeFriend_Android"
         tools:targetApi="31">
-        <!-- DongnaeInformationActivity 추가 -->
-        <!--activity android:name=".DongnaeInformationActivity" android:exported="true">
-            <intent-filter>
+<!--        &lt;!&ndash; DongnaeInformationActivity 추가 &ndash;&gt;-->
+        <activity android:name=".DongnaeInformationActivity" android:exported="true">
+           <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity-->
+           </intent-filter>
+        </activity>
 
         <activity
             android:name=".BasicSettingActivity"
@@ -30,11 +30,11 @@
         <activity
             android:name=".IncomePlus3Activity"
             android:exported="false" />
-        <!--activity
-            android:name=".activity_dongnae_home"
+        <activity
+            android:name=".DongnaeHomeFragment"
             android:exported="false"
             android:label="@string/title_activity_dongnae_home"
-            android:theme="@style/Theme.DongnaeFriend_Android" /-->
+            android:theme="@style/Theme.DongnaeFriend_Android"/>
 
         <activity
             android:name=".IncomePlus2Activity"

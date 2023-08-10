@@ -1,4 +1,4 @@
-/*package com.example.dongnaefriend_android
+package com.example.dongnaefriend_android
 
 import android.nfc.Tag
 import android.os.Bundle
@@ -99,4 +99,3 @@ class DongnaeRestaurantFragment : Fragment() {
 
 }
 
- */
