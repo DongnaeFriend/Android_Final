@@ -33,5 +33,5 @@ class AccountbookDetailFragment : Fragment() {
         return binding.root
     }
 
-
+//
 }
