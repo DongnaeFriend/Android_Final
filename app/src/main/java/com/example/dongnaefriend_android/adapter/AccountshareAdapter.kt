@@ -18,7 +18,6 @@ class AccountshareAdapter: RecyclerView.Adapter<AccountshareAdapter.ViewHolder>(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(dataList[position])
-
     }
 
     override fun getItemCount(): Int = dataList.size

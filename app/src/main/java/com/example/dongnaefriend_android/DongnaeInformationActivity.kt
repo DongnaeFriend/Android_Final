@@ -17,6 +17,11 @@ class DongnaeInformationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDongnaeinformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        // image_write의 클릭 리스너 설정
+        binding.imageWrite.setOnClickListener {
+            openAccountShareFragment()
+        }
+
 
         // ViewPager2와 Adapter 연결
         val pagerAdapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
@@ -38,7 +43,12 @@ class DongnaeInformationActivity : AppCompatActivity() {
             }
         }.attach()
     }
-
+    private fun openAccountShareFragment() {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container_dongnae, DongnaeWriteFragment())
+        transaction.addToBackStack(null)  // "뒤로" 작업
+        transaction.commit()
+    }
     inner class ViewPagerAdapter(fm: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fm, lifecycle) {
         override fun getItemCount(): Int {
             return 7
