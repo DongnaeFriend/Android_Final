@@ -40,6 +40,8 @@ class SetBudgetActivity : AppCompatActivity() {
         }
         binding.ivSetBudgetSave.setOnClickListener {
 
+
+            //retrofit통신 - Post
             val data = PostBudget(2023,7,5000)
             api.postBudget(2023,7,5000,data,"Bearer $authToken").enqueue(object: Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>){
