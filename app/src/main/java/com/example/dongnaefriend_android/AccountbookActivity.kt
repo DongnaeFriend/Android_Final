@@ -214,4 +214,16 @@ class AccountbookActivity : AppCompatActivity(){
         viewBinding.btnMyaccountUnClicked.visibility = View.GONE
     }
 
+    fun ForAccountDetailGone(){
+        viewBinding.toolbarAccountbook.visibility = View.GONE
+        viewBinding.textviewAccounttitle.visibility = View.GONE
+        viewBinding.containerAccount.visibility = View.GONE
+        viewBinding.btnAccountshareClicked.visibility = View.GONE
+        viewBinding.btnMyaccountUnClicked.visibility = View.GONE
+        viewBinding.btnAccountshare.visibility = View.GONE
+        viewBinding.btnMyaccount.visibility = View.GONE
+    }
+
+
+
 }

@@ -38,9 +38,6 @@
             android:exported="false" />
 
         <activity
-            android:name=".MyAccountDetailActivity"
-            android:exported="false" />
-        <activity
             android:name=".SetBudgetActivity"
             android:exported="false" />
         <activity

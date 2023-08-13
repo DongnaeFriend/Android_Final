@@ -6,6 +6,9 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.example.dongnaefriend_android.Retrofit2.BudgetResponse
+import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
+import com.example.dongnaefriend_android.Retrofit2.RetrofitInterface
 import com.example.dongnaefriend_android.databinding.ActivityMainBinding
 import com.github.mikephil.charting.BuildConfig
 import com.kakao.sdk.auth.AuthApiClient
@@ -15,7 +18,15 @@ import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.common.model.KakaoSdkError
 import com.kakao.sdk.common.util.Utility
 import com.kakao.sdk.user.UserApiClient
+import com.kakao.sdk.user.model.User
+import okhttp3.internal.userAgent
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
+private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
+private val api: RetrofitInterface = retrofit.create(RetrofitInterface::class.java) // retrofit이 interface 구현
 
 class MainActivity : AppCompatActivity() {
     private lateinit var Binding: ActivityMainBinding
@@ -26,18 +37,21 @@ class MainActivity : AppCompatActivity() {
 
 
         Binding.ivKakaologin.setOnClickListener{
-            var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=496d0f95e625e90a64a2ffdaaba58120&redirect_uri=http://dongnae.shop/callback"))
+            var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=496d0f95e625e90a64a2ffdaaba58120&redirect_uri=https://dongnae.shop/callback"))
             startActivity(intent)
 
 
 
         }
+
 
         Binding.btnStart.setOnClickListener{
             val intent = Intent(this,HomeActivity::class.java)
 
             startActivity(intent)
         }
+
+
 
 
 

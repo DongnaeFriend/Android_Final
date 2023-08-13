@@ -26,6 +26,7 @@ object RetrofitClient {
                 .connectTimeout(CONNECT_TIMEOUT_SEC, TimeUnit.SECONDS)
                 .build()
              */
+            //사이트 인증서 (TrustOkHttpClientUtil) 불러오는 코드
             val client = TrustOkHttpClientUtil.getUnsafeOkHttpClient().build()
 
 

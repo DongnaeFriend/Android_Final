@@ -11,6 +11,8 @@ import javax.net.ssl.X509TrustManager;
 
 import okhttp3.OkHttpClient;
 
+//https://kanzler.tistory.com/329 참고 모든 사이트 인증 받게함
+
 public class TrustOkHttpClientUtil {
 
     public static OkHttpClient.Builder getUnsafeOkHttpClient() {

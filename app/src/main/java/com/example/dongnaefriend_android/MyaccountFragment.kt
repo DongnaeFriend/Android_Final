@@ -4,12 +4,16 @@ import android.R
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import com.example.dongnaefriend_android.Retrofit2.BudgetResponse
+import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
+import com.example.dongnaefriend_android.Retrofit2.RetrofitInterface
 import com.example.dongnaefriend_android.databinding.FragmentMyaccountBinding
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
@@ -17,11 +21,21 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.github.mikephil.charting.utils.ColorTemplate.COLORFUL_COLORS
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 import java.lang.Math.abs
 
 class MyaccountFragment : Fragment() {
 
     private lateinit var binding: FragmentMyaccountBinding
+    var setBudget = 0
+
+
+    private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
+    private val api: RetrofitInterface = retrofit.create(RetrofitInterface::class.java) // retrofit이 interface 구현
+    private val authToken = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,16 +44,37 @@ class MyaccountFragment : Fragment() {
         binding = FragmentMyaccountBinding.inflate(layoutInflater)
 
 
+        //예산 설정 불러오기 - GET
+        Runnable {
+            api.getBudget(2023, 7,"Bearer $authToken").enqueue(object : Callback<BudgetResponse> {
+                // 전송 실패
+                override fun onFailure(call: Call<BudgetResponse>, t: Throwable) {
+                    Log.d("************", t.message!!)
+                }
+                // 전송 성공
+                override fun onResponse(call: Call<BudgetResponse>, response: Response<BudgetResponse>) {
+                    Log.d("*******&&&&&*****", "response : ${response.body()?.budget}") // 정상출력
+
+                    //예산값 넣기
+                    setBudget = response.body()?.budget!!
+
+                    // 전송은 성공 but 서버 4xx 에러
+                    Log.d("태그: 에러바디", "response : ${response.errorBody()}")
+                    Log.d("태그: 메시지", "response : ${response.message()}")
+                    Log.d("태그: 코드", "response : ${response.code()}")
+                }
+
+            })
+        }.run()
 
 
-        binding.tvMyacountDetail.setOnClickListener {
-            val intent = Intent(getActivity(),MyAccountDetailActivity::class.java)
-            startActivity(intent)
-        }
 
 
-        val expesion = 330000
-        val setBudget = 300000
+
+
+
+        val expesion = 4000
+
         val currentDay = 10
         val presentMonthDayCount = 30
         val leftBudget = setBudget - expesion
@@ -84,12 +119,13 @@ class MyaccountFragment : Fragment() {
                         binding.tvLeftbudget.text = myAccountText2
                     }
                     else{
-                        if (setBudgetPerDay>=expesion){
+                        if (setBudget>=expesion){
                             myAccountText2 = "너무 잘하고 있어요!"
                         }
                         else{
                             myAccountText2 = "조금만 더 절약해봐요!"
                         }
+                        myAccountText1 = "이번달 남은 예산은 ${setBudget-expesion}원이에요"
                         binding.tvLeftbudget.text = "${myAccountText1} \n ${myAccountText2}"
                     }
                 }
@@ -228,7 +264,10 @@ class MyaccountFragment : Fragment() {
 
 
 
-
+        binding.tvMyacountDetail.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(com.example.dongnaefriend_android.R.id.container_fragment,AccountbookDetailFragment()).commit()
+            (activity as AccountbookActivity).ForAccountDetailGone()
+        }
 
 
         return binding.root
