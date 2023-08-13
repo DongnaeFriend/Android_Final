@@ -1,16 +1,12 @@
-/*package com.example.dongnaefriend_android
+package com.example.dongnaefriend_android
 
-import android.nfc.Tag
 import android.os.Bundle
-import android.provider.Telephony
-import android.provider.Telephony.Mms.Rate
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dongnaefriend_android.adapter.DongnaeshareAdapter
-import com.example.dongnaefriend_android.databinding.FragmentDongnaeWriteBinding
 import com.example.dongnaefriend_android.databinding.FragmentDongnaeshareBinding
 import model.Post
 
@@ -99,4 +95,3 @@ class DongnaeRestaurantFragment : Fragment() {
 
 }
 
- */
