@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".DongnaeInformationActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_dongnaeinformation"
         android:layout_width="match_parent"
@@ -121,6 +122,9 @@
 
         <ImageView
             android:id="@+id/image_write"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -131,4 +135,5 @@
             android:layout_marginBottom="16dp"
             android:src="@drawable/dongnae_write" />
     </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
