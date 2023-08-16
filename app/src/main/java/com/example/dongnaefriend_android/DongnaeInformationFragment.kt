@@ -9,13 +9,7 @@ import android.view.ViewGroup
 
 
 class DongnaeInformationFragment : Fragment() {
-        override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            // Inflate the layout for this fragment
-            return inflater.inflate(R.layout.fragment_community, container, false)
-        }
+
         override fun onStart() {
             super.onStart()
             val intent = Intent(getActivity(), DongnaeInformationActivity::class.java)

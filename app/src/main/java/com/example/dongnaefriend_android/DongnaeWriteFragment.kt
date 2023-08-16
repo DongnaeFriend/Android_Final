@@ -24,6 +24,5 @@ class DongnaeWriteFragment : Fragment() {
         return binding.root
     }
 
-
 }
 

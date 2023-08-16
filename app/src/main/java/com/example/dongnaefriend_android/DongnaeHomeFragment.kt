@@ -26,18 +26,18 @@ class DongnaeHomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // DongnaeInformationActivity의 imageWrite ImageView
-        val imageWrite: ImageView? = activity?.findViewById(R.id.image_write)
-        imageWrite?.setOnClickListener {
-
-            parentFragmentManager.commit {
-                //replace(R.id.container_dongnae, DongnaeWriteFragment())
-                addToBackStack(null)
-            }
+//        val imageWrite: ImageView? = activity?.findViewById(R.id.image_write)
+//        imageWrite?.setOnClickListener {
+//
+//            parentFragmentManager.commit {
+//                //replace(R.id.container_dongnae, DongnaeWriteFragment())
+//                addToBackStack(null)
+//            }
         }
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-}
+//
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
+//}

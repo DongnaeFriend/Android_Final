@@ -36,8 +36,13 @@ class DongnaeRestaurantFragment : Fragment() {
 
         initRestaurantList()
         initRestaurantRecyclerView()
-
-
+        binding.btnDongnaeshare.setOnClickListener{
+            // 버튼 클릭 시 DongnaeWriteFragment를 표시하도록 프래그먼트 트랜잭션 설정
+            val fragmentTransaction = parentFragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.container_dongnae, DongnaeWriteFragment())
+            fragmentTransaction.addToBackStack(null) // 이전 프래그먼트를 스택에 추가
+            fragmentTransaction.commit()
+        }
 
     }
 
@@ -95,6 +100,7 @@ class DongnaeRestaurantFragment : Fragment() {
             )
         )
     }
+
 
 
 }
