@@ -46,7 +46,7 @@ class DongnaeInformationActivity : AppCompatActivity() {
                 else -> "공공정보"
             }
         }.attach()
-
+        binding.imageWrite.visibility = View.GONE
         // TabLayout에 탭 선택 리스너 추가
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -104,7 +104,6 @@ class DongnaeInformationActivity : AppCompatActivity() {
 
 
     private fun openDongnaeShareFragment() {
-        Log.d("FragmentTransaction", "openDongnaeShareFragment is called.")
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(android.R.id.content, DongnaeWriteFragment())
         transaction.addToBackStack(null)  // "뒤로" 작업
