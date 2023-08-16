@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
                     .beginTransaction()
                     .replace(Binding.containerFragment.id, CommunityFragment())
                     .commitAllowingStateLoss()
-                category_1 = R.id.menu_commnunity
+
                 break
 
             } else if (category == 3) {
@@ -79,12 +79,7 @@ class HomeActivity : AppCompatActivity() {
                             .commitAllowingStateLoss()
                     }
 
-                    R.id.menu_commnunity -> {
-                        supportFragmentManager
-                            .beginTransaction()
-                            .replace(Binding.containerFragment.id, CommunityFragment())
-                            .commitAllowingStateLoss()
-                    }
+
 
                     R.id.menu_dongnaeinformation -> {
                         supportFragmentManager

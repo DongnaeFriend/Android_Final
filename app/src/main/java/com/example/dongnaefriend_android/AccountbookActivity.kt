@@ -103,15 +103,7 @@ class AccountbookActivity : AppCompatActivity(){
 
 
                     }
-                    R.id.menu_commnunity ->{
-                        val intent = Intent(context, HomeActivity::class.java)
 
-                        intent.putExtra("text",2)
-                        context.startActivity(intent)
-
-
-
-                    }
                     R.id.menu_dongnaeinformation ->{
                         val intent = Intent(context, HomeActivity::class.java)
 

@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:id="@+id/menu_home"
-        android:title="홈"
-        android:icon="@drawable/btv_home"/>
     <item
         android:id="@+id/menu_dongnaeinformation"
         android:title="동네정보"
@@ -14,9 +9,10 @@
         android:title="가계부"
         android:icon="@drawable/btv_accountbook"/>
     <item
-        android:id="@+id/menu_commnunity"
-        android:title="자취일기"
-        android:icon="@drawable/btv_community"/>
+        android:id="@+id/menu_home"
+        android:title="홈"
+        android:icon="@drawable/btv_home"/>
+
     <item
         android:id="@+id/menu_mypage"
         android:title="마이페이지"

@@ -73,12 +73,7 @@ class DongnaeInformationActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
-                R.id.menu_commnunity -> {
-                    val intent = Intent(this, HomeActivity::class.java)
-                    intent.putExtra("text", 2)
-                    startActivity(intent)
-                    true
-                }
+
                 R.id.menu_dongnaeinformation -> {
 
                     true
