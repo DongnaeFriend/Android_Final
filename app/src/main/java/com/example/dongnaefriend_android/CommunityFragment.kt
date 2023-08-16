@@ -17,11 +17,11 @@ class CommunityFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_community, container, false)
     }
-    override fun onStart() {
-        super.onStart()
-        val intent = Intent(getActivity(), DongnaeInformationActivity::class.java)
-        startActivity(intent)
-    }
+    //override fun onStart() {
+      //  super.onStart()
+        //val intent = Intent(getActivity(), DongnaeInformationActivity::class.java)
+        //startActivity(intent)
+    //}
 
 
 }

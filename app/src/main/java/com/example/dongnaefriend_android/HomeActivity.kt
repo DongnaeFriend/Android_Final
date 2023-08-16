@@ -89,7 +89,7 @@ class HomeActivity : AppCompatActivity() {
                     R.id.menu_dongnaeinformation -> {
                         supportFragmentManager
                             .beginTransaction()
-                            .replace(Binding.containerFragment.id, DongnaeHomeFragment())
+                            .replace(Binding.containerFragment.id, DongnaeInformationFragment())
                             .commitAllowingStateLoss()
                     }
 
