@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.dongnaefriend_android.Retrofit2.moneyHistory
 import com.example.dongnaefriend_android.databinding.ActivityPaymentPlus1Binding
 import java.util.Calendar
 
@@ -21,6 +22,7 @@ class PaymentPlus1Activity : AppCompatActivity() {
 
             val intent = Intent(this, PaymentPlus2Activity::class.java)
             startActivity(intent)
+
         }
 
         binding.imageviewPaymentgoback1.setOnClickListener {

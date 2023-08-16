@@ -24,7 +24,7 @@ interface RetrofitInterface {
 
 
     //예산 설정
-    @POST("account/budget")
+    @POST("api/account/budget")
     fun postBudget(
         @Query("year") year: Int,
         @Query("month") month: Int,

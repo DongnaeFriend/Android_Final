@@ -12,3 +12,9 @@ data class Post(
     val time: String,
     val num: String
 ) : Serializable
+
+data class PaymentListData(
+    val category : String,
+    val memo : String,
+    val moneyAmount : Int,
+)
