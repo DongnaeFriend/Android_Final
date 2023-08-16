@@ -23,16 +23,6 @@ class DongnaeWriteFragment : Fragment() {
         binding = FragmentDongnaeWriteBinding.inflate(inflater, container, false)
         return binding.root
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.tvComplete.setOnClickListener{
-
-            val intent = Intent(getActivity(), AccountbookActivity::class.java)
-            intent.putExtra("text",2)
-            startActivity(intent)
-        }
-    }
 
 }
 
