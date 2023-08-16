@@ -18,6 +18,7 @@ class DongnaeRestaurantFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
     }
+    // image_write의 클릭 리스너 설정
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,6 +26,8 @@ class DongnaeRestaurantFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentDongnaeshareBinding.inflate(inflater, container,false)
+
+
         return binding.root
     }
 
@@ -33,6 +36,7 @@ class DongnaeRestaurantFragment : Fragment() {
 
         initRestaurantList()
         initRestaurantRecyclerView()
+
 
 
     }
