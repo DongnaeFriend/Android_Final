@@ -65,7 +65,43 @@ class DongnaeInformationActivity : AppCompatActivity() {
                 // 필요 없음
             }
         })
+        // BottomNavigationView의 아이템 선택 리스너 설정
+        binding.navBottom.setOnItemSelectedListener { item ->
+            when(item.itemId) {
+                R.id.menu_home -> {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_commnunity -> {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    intent.putExtra("text", 2)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_dongnaeinformation -> {
+
+                    true
+                }
+                R.id.menu_accountbook -> {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    intent.putExtra("text", 3)
+                    startActivity(intent)
+                    true
+                }
+                R.id.menu_mypage -> {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    intent.putExtra("text", 5)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
+        binding.navBottom.selectedItemId = R.id.menu_dongnaeinformation
+
     }
+
 
     private fun openDongnaeShareFragment() {
         Log.d("FragmentTransaction", "openDongnaeShareFragment is called.")
@@ -90,5 +126,7 @@ class DongnaeInformationActivity : AppCompatActivity() {
                 else -> DongnaePublicInfoFragment()
             }
         }
+
     }
+
 }
