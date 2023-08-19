@@ -33,7 +33,6 @@ class DongnaeshareAdapter: RecyclerView.Adapter<DongnaeshareAdapter.ViewHolder>(
             binding.tvItemDongnaeshareMention.text = dongnaeshare.mention
             binding.tvItemDongnaeshareLike.text = dongnaeshare.like
             binding.tvItemDongnaeshareText.text = dongnaeshare.text
-            binding.tvItemDongnaeshareLoc.text = dongnaeshare.loc
             binding.tvItemDongnaeshareTime.text = dongnaeshare.time
             binding.tvItemDongnaeshareNum.text = dongnaeshare.num
         }

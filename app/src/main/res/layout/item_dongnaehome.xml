@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/rectangle"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layout_restaurant"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+    <!-- 맛집 제목 -->
+        <TextView
+            android:id="@+id/tv_item_dongnaehome_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:text="맛집"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+
+        <!-- 글 목록 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_item_dongnaehome_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="10sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_item_dongnaehome_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+            <!-- Horizontal Layout for the other TextViews -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <!-- 전농동 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전농동"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+
+            <!-- 23.08.14 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23.08.14"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+
+            <!-- 조회 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조회"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+
+            <!-- 484 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="484"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+
+            <!-- 댓글 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="댓글"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+
+            <!-- 96 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="96"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_accountshare"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/tv_item_dongnaehome_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="10dp"
+            android:text="Title"
+            android:textSize="10sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_item_dongnaehome_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="text"
+            android:textSize="8sp"
+            android:textColor="#61646B"/>
+        <!-- Horizontal Layout for the other TextViews -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- 전농동 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전농동"
+                android:textSize="8sp"
+                android:textColor="#61646B"
+                android:layout_marginStart="18dp"/>
+
+            <!-- 23.08.14 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23.08.14"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+
+            <!-- 조회 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조회"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+
+            <!-- 484 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="484"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+
+            <!-- 댓글 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="댓글"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+
+            <!-- 96 텍스트 뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="96"
+                android:textSize="8sp"
+                android:textColor="#61646B"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

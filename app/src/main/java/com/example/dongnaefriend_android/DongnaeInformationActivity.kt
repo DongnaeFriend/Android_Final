@@ -98,12 +98,12 @@ class DongnaeInformationActivity : AppCompatActivity() {
     }
 
 
-    private fun openDongnaeShareFragment() {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(android.R.id.content, DongnaeWriteFragment())
-        transaction.addToBackStack(null)  // "뒤로" 작업
-        transaction.commit()
-    }
+//    private fun openDongnaeShareFragment() {
+//        val transaction = supportFragmentManager.beginTransaction()
+//        transaction.replace(android.R.id.content, DongnaeWriteFragment())
+//        transaction.addToBackStack(null)  // "뒤로" 작업
+//        transaction.commit()
+//    }
     inner class ViewPagerAdapter(fm: FragmentManager, lifecycle: Lifecycle) : FragmentStateAdapter(fm, lifecycle) {
         override fun getItemCount(): Int {
             return 7
