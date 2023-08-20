@@ -62,7 +62,7 @@ class DongnaeInformationActivity : AppCompatActivity() {
                 }
                 R.id.menu_accountbook -> {
                     val intent = Intent(this, HomeActivity::class.java)
-                    intent.putExtra("text", 3)
+                    intent.putExtra("text", 4)
                     startActivity(intent)
                     true
                 }
@@ -76,6 +76,9 @@ class DongnaeInformationActivity : AppCompatActivity() {
             }
         }
         binding.navBottom.selectedItemId = R.id.menu_dongnaeinformation
+
+
+
 
     }
 
@@ -104,5 +107,14 @@ class DongnaeInformationActivity : AppCompatActivity() {
         }
 
     }
+
+    fun goneForWrite(){
+        binding.containerDongnae.visibility = View.GONE
+        binding.toolbarDongnaeinformation.visibility = View.GONE
+        binding.RL1.visibility = View.GONE
+        binding.tabLayout.visibility = View.GONE
+    }
+
+
 
 }

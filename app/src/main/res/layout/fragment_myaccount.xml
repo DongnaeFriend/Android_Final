@@ -128,6 +128,7 @@
                 android:layout_height="wrap_content"
                 android:text="이번달 남은 예산은 X원이에요 \n 너무 잘하고 있어요!"
                 android:textSize="14dp"
+                android:lineSpacingExtra="10sp"
                 android:gravity="center"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +161,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/const_myaccountgraph"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_myacount_detail"
         app:layout_constraintVertical_weight="6"
         >
 
@@ -1048,9 +1049,8 @@
         android:id="@+id/tv_myacount_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="자세히보기>"
+        android:text="자세히보기 >"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

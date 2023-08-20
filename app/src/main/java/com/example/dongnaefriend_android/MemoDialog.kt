@@ -27,10 +27,12 @@ class MemoDialog :DialogFragment(){
         //dialog?.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.MATCH_PARENT)
         dialog?.setCancelable(false)
         dialog?.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog?.window!!.setDimAmount(0.9f)
+        dialog?.window!!.setDimAmount(0.5f)
 
         val sharedPrefs= requireActivity().getPreferences(Context.MODE_PRIVATE)
         val editor = sharedPrefs.edit()
+
+
 
 
         /*메모 개수 조절(구현실패)
@@ -162,15 +164,7 @@ class MemoDialog :DialogFragment(){
             editor.putString("memo5",binding.edittextAccountmemo5.text.toString())
             editor.putBoolean("memo5B",binding.checkboxAccountmemo5.isChecked)
 
-            editor.putString("memo6",binding.edittextAccountmemo6.text.toString())
-            editor.putBoolean("memo6B",binding.checkboxAccountmemo6.isChecked)
 
-            editor.putString("memo7",binding.edittextAccountmemo7.text.toString())
-            editor.putBoolean("memo7B",binding.checkboxAccountmemo7.isChecked)
-
-            editor.putString("memo8",binding.edittextAccountmemo8.text.toString())
-            editor.putBoolean("memo8B",binding.checkboxAccountmemo8.isChecked)
-            editor.apply()//sharedpreference에 넣기
 
             dialog?.dismiss()//메모창닫기
         }
@@ -191,15 +185,6 @@ class MemoDialog :DialogFragment(){
         if (sharedPrefs.getString("memo5", " ") != " ") {
             binding.edittextAccountmemo5.setText(sharedPrefs.getString("memo5", " "))
             binding.checkboxAccountmemo5.isChecked = sharedPrefs.getBoolean("memo5B", false)}
-        if (sharedPrefs.getString("memo6", " ") != " ") {
-            binding.edittextAccountmemo6.setText(sharedPrefs.getString("memo6", " "))
-            binding.checkboxAccountmemo6.isChecked = sharedPrefs.getBoolean("memo6B", false)}
-        if (sharedPrefs.getString("memo7", " ") != " ") {
-            binding.edittextAccountmemo7.setText(sharedPrefs.getString("memo7", " "))
-            binding.checkboxAccountmemo7.isChecked = sharedPrefs.getBoolean("memo7B", false)}
-        if (sharedPrefs.getString("memo8", " ") != " ") {
-            binding.edittextAccountmemo8.setText(sharedPrefs.getString("memo8", " "))
-            binding.checkboxAccountmemo8.isChecked = sharedPrefs.getBoolean("memo8B", false)}
 
 
 

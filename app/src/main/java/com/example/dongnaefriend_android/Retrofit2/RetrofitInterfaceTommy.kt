@@ -1,18 +1,13 @@
 package com.example.dongnaefriend_android.Retrofit2
 
-import com.kakao.sdk.user.model.User
-import model.Post
 import retrofit2.Call
 import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Header
-import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Query
 
-interface RetrofitInterface {
+interface RetrofitInterfaceTommy {
 
     //예산조회
     @GET("api/account/budget")
@@ -32,5 +27,21 @@ interface RetrofitInterface {
         @Body request: PostBudget,
         @Header("Authorization") authToken: String
     ): Call<Void>
+
+
+    @POST("api/account")
+    fun postMoneyHistory(
+        @Body request : PostMoneyHistory,
+        @Header("Authorization") authToken: String
+    ):Call<Void>
+
+    @GET("api/account")
+    fun getMoneyHistory(
+        @Query("year") year: Int,
+        @Query("month") month: Int,
+        @Query("day") day : Int,
+        @Header("Authorization") authToken: String
+    ): Call<MoneyHistoryResponse>
+
 }
 

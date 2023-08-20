@@ -53,6 +53,16 @@ class HomeActivity : AppCompatActivity() {
                 category_1 = R.id.menu_dongnaeinformation
                 break
 
+            } else if (category == 4) {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(Binding.containerFragment.id, DongnaeHomeFragment())
+                    .commitAllowingStateLoss()
+                category_1 = R.id.menu_accountbook
+                break
+
+
+
             } else if (category == 5) {
                 supportFragmentManager
                     .beginTransaction()

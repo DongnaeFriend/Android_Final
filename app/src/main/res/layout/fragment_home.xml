@@ -134,6 +134,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_bank" />
 
         <TextView
+            android:id="@+id/tv_accountdetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="자세히보기 >"

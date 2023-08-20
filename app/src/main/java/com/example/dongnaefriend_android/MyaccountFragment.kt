@@ -1,7 +1,6 @@
 package com.example.dongnaefriend_android
 
 import android.R
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -13,7 +12,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.example.dongnaefriend_android.Retrofit2.BudgetResponse
 import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
-import com.example.dongnaefriend_android.Retrofit2.RetrofitInterface
+import com.example.dongnaefriend_android.Retrofit2.RetrofitInterfaceTommy
 import com.example.dongnaefriend_android.databinding.FragmentMyaccountBinding
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
@@ -34,7 +33,7 @@ class MyaccountFragment : Fragment() {
 
 
     private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
-    private val api: RetrofitInterface = retrofit.create(RetrofitInterface::class.java) // retrofit이 interface 구현
+    private val api: RetrofitInterfaceTommy = retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
     private val authToken = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,7 +45,7 @@ class MyaccountFragment : Fragment() {
 
         //예산 설정 불러오기 - GET
         Runnable {
-            api.getBudget(2023, 7,"Bearer $authToken").enqueue(object : Callback<BudgetResponse> {
+            api.getBudget(2023, 8,"Bearer $authToken").enqueue(object : Callback<BudgetResponse> {
                 // 전송 실패
                 override fun onFailure(call: Call<BudgetResponse>, t: Throwable) {
                     Log.d("************", t.message!!)
@@ -87,7 +86,7 @@ class MyaccountFragment : Fragment() {
 
         //arrayof(item)을 현재 월까지 추가
         var currentYear = 2023
-        var currentMonth = 7
+        var currentMonth = 8
         var spinnerPosition = -1
         var item : Array<String> = emptyArray()
 
@@ -115,7 +114,7 @@ class MyaccountFragment : Fragment() {
 
                 if (position ==  spinnerPosition){
                     if (setBudget<expesion){
-                        myAccountText2 = "이번 달 예산을 ${abs(setBudget-expesion)}만큼 초과했어요.\n절약이 절실해요"
+                        myAccountText2 = "이번 달 예산을 ${abs(setBudget-expesion)}원 만큼 초과했어요.\n절약이 절실해요"
                         binding.tvLeftbudget.text = myAccountText2
                     }
                     else{

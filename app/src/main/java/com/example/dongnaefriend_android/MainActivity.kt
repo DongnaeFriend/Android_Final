@@ -1,32 +1,16 @@
 package com.example.dongnaefriend_android
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.dongnaefriend_android.Retrofit2.BudgetResponse
 import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
-import com.example.dongnaefriend_android.Retrofit2.RetrofitInterface
+import com.example.dongnaefriend_android.Retrofit2.RetrofitInterfaceTommy
 import com.example.dongnaefriend_android.databinding.ActivityMainBinding
-import com.github.mikephil.charting.BuildConfig
-import com.kakao.sdk.auth.AuthApiClient
-import com.kakao.sdk.auth.model.OAuthToken
-import com.kakao.sdk.common.model.ClientError
-import com.kakao.sdk.common.model.ClientErrorCause
-import com.kakao.sdk.common.model.KakaoSdkError
-import com.kakao.sdk.common.util.Utility
-import com.kakao.sdk.user.UserApiClient
-import com.kakao.sdk.user.model.User
-import okhttp3.internal.userAgent
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import retrofit2.Retrofit
 
 private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
-private val api: RetrofitInterface = retrofit.create(RetrofitInterface::class.java) // retrofit이 interface 구현
+private val api: RetrofitInterfaceTommy = retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
 
 class MainActivity : AppCompatActivity() {
     private lateinit var Binding: ActivityMainBinding

@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp">
 
         <Button
             android:id="@+id/button_memoclose"
@@ -17,7 +18,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="close"/>
+            android:text="닫기"
+            android:background="@color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -25,13 +27,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/img_popupaccountmemo"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginHorizontal="30sp"
+        android:layout_marginBottom="100dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Const_memo1">
+            android:id="@+id/Const_memo1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp">
 
             <CheckBox
                 android:id="@+id/checkbox_accountmemo1"
@@ -67,7 +73,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Const_memo2">
+            android:id="@+id/Const_memo2"
+            android:layout_marginHorizontal="10dp">
 
             <CheckBox
                 android:id="@+id/checkbox_accountmemo2"
@@ -100,7 +107,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Const_memo3">
+            android:id="@+id/Const_memo3"
+            android:layout_marginHorizontal="10dp">
 
             <CheckBox
                 android:id="@+id/checkbox_accountmemo3"
@@ -133,7 +141,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Const_memo4">
+            android:id="@+id/Const_memo4"
+            android:layout_marginHorizontal="10dp">
 
             <CheckBox
                 android:id="@+id/checkbox_accountmemo4"
@@ -166,7 +175,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Const_memo5">
+            android:id="@+id/Const_memo5"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginBottom="20dp">
 
             <CheckBox
                 android:id="@+id/checkbox_accountmemo5"
@@ -196,102 +207,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/Const_memo6">
 
-            <CheckBox
-                android:id="@+id/checkbox_accountmemo6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                />
-
-            <EditText
-                android:id="@+id/edittext_accountmemo6"
-                android:layout_width="0dp"
-                android:layout_height = "wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/checkbox_accountmemo6"
-                app:layout_constraintEnd_toStartOf="@id/imageview_memodelete6" />
-
-            <ImageView
-                android:id="@+id/imageview_memodelete6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/edittext_accountmemo6"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/button_memodelete"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/Const_memo7">
-
-            <CheckBox
-                android:id="@+id/checkbox_accountmemo7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                />
-
-            <EditText
-                android:id="@+id/edittext_accountmemo7"
-                android:layout_width="0dp"
-                android:layout_height = "wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/checkbox_accountmemo7"
-                app:layout_constraintEnd_toStartOf="@id/imageview_memodelete7" />
-
-            <ImageView
-                android:id="@+id/imageview_memodelete7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/edittext_accountmemo7"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/button_memodelete"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/Const_memo8"
-            android:layout_marginBottom="30dp">
-
-            <CheckBox
-                android:id="@+id/checkbox_accountmemo8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                />
-
-            <EditText
-                android:id="@+id/edittext_accountmemo8"
-                android:layout_width="0dp"
-                android:layout_height = "wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/checkbox_accountmemo8"
-                app:layout_constraintEnd_toStartOf="@id/imageview_memodelete8" />
-
-            <ImageView
-                android:id="@+id/imageview_memodelete8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/edittext_accountmemo8"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/button_memodelete"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </LinearLayout>

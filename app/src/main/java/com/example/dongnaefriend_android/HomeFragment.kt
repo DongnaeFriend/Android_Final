@@ -1,5 +1,7 @@
 package com.example.dongnaefriend_android
 
+import android.accounts.Account
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +18,11 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Binding = FragmentHomeBinding.inflate(layoutInflater)
+
+        Binding.tvAccountdetail.setOnClickListener {
+            val intent = Intent(context, AccountbookActivity::class.java)
+            startActivity(intent)
+        }
 
 
 

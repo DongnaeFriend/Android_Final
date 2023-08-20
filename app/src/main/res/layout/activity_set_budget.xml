@@ -83,7 +83,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5월 지출액은"
+            android:text="7월 지출액은 "
             android:textSize="15dp"
             />
 
@@ -91,7 +91,7 @@
             android:id="@+id/tv_lastmonthpayment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="'570,300원'"
+            android:text="'570,300원' "
             android:textColor="#ffd700"
             android:textSize="15dp"
             />
@@ -105,22 +105,38 @@
 
 
     </LinearLayout>
-
-
-    <EditText
-        android:id="@+id/et_setbudget"
+    
+    <LinearLayout
+        android:id="@+id/LL_setbudget"
         android:layout_width="312dp"
         android:layout_height="69dp"
-        android:text=""
-        android:textSize="50sp"
-        android:textColor="#4600A3"
         app:layout_constraintTop_toBottomOf="@id/linear_setbudget1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
-        android:textStyle="bold"
+        android:layout_marginTop="30sp">
 
-        />
+        <EditText
+            android:id="@+id/et_setbudget"
+            android:layout_width="260dp"
+            android:layout_height="69dp"
+            android:text=""
+            android:textSize="50sp"
+            android:textColor="#4600A3"
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
+            android:textSize="50sp"
+            android:textColor="#4600A3"
+            />
+
+    </LinearLayout>
+
+
 
 
     <TextView
@@ -128,7 +144,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="하루에 대략"
-        app:layout_constraintTop_toBottomOf="@id/et_setbudget"
+        app:layout_constraintTop_toBottomOf="@id/LL_setbudget"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="40dp"
@@ -147,7 +163,14 @@
             android:id="@+id/tv_budgetperday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="16,666원"
+            android:text="0"
+            android:textColor="#4600A3"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
             android:textColor="#4600A3"
             android:textSize="15dp"/>
 

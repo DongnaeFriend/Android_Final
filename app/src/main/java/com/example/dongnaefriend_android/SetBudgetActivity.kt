@@ -11,16 +11,15 @@ import android.util.Log
 import com.example.dongnaefriend_android.Retrofit2.BudgetResponse
 import com.example.dongnaefriend_android.Retrofit2.PostBudget
 import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
-import com.example.dongnaefriend_android.Retrofit2.RetrofitInterface
+import com.example.dongnaefriend_android.Retrofit2.RetrofitInterfaceTommy
 import com.example.dongnaefriend_android.databinding.ActivitySetBudgetBinding
-import model.Post
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 
 private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
-private val api: RetrofitInterface = retrofit.create(RetrofitInterface::class.java) // retrofit이 interface 구현
+private val api: RetrofitInterfaceTommy = retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
 private val authToken = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
 
 
@@ -85,7 +84,7 @@ class SetBudgetActivity : AppCompatActivity() {
 
         //retrofit 통신 https://velog.io/@hygge/Android-Kotlin-Retrofit2%EB%A1%9C-%EC%84%9C%EB%B2%84-%ED%86%B5%EC%8B%A0-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0 참고
         Runnable {
-            api.getBudget(2023, 7,"Bearer $authToken").enqueue(object : Callback<BudgetResponse> {
+            api.getBudget(2023, 8,"Bearer $authToken").enqueue(object : Callback<BudgetResponse> {
                 // 전송 실패
                 override fun onFailure(call: Call<BudgetResponse>, t: Throwable) {
                     Log.d("************", t.message!!)
