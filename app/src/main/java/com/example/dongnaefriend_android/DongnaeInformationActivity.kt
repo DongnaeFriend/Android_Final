@@ -46,25 +46,7 @@ class DongnaeInformationActivity : AppCompatActivity() {
                 else -> "공공정보"
             }
         }.attach()
-//        binding.imageWrite.visibility = View.GONE
-//        // TabLayout에 탭 선택 리스너 추가
-//        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-//            override fun onTabSelected(tab: TabLayout.Tab?) {
-//                if (tab?.position == 0) { // '홈' 탭이 선택되었을 때
-//                    binding.imageWrite.visibility = View.GONE // 'image_write' 를 숨김
-//                } else {
-//                    binding.imageWrite.visibility = View.VISIBLE // 그 외 탭이 선택되었을 때 'image_write' 를 표시
-//                }
-//            }
-//
-//            override fun onTabUnselected(tab: TabLayout.Tab?) {
-//                // 필요 없음
-//            }
-//
-//            override fun onTabReselected(tab: TabLayout.Tab?) {
-//                // 필요 없음
-//            }
-//        })
+
         // BottomNavigationView의 아이템 선택 리스너 설정
         binding.navBottom.setOnItemSelectedListener { item ->
             when(item.itemId) {
