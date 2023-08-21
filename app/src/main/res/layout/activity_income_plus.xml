@@ -61,14 +61,27 @@
         android:id="@+id/edittext_incomeplus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" "
-        android:hint="4500원"
+        android:hint="                "
         android:textSize="64dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_won"
         app:layout_constraintBottom_toTopOf="@+id/button_incomeplusnext"
         android:layout_marginEnd="20dp"
-        android:textColorHint="#4600a3" />
+        android:textColorHint="#4600a3"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/tv_won"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="원"
+        android:textSize="64dp"
+        app:layout_constraintTop_toTopOf="@id/edittext_incomeplus"
+        app:layout_constraintBottom_toBottomOf="@id/edittext_incomeplus"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#4600a3"
+        android:textStyle="bold"
+        android:layout_marginEnd="20dp"/>
 
     <ImageView
         android:id="@+id/button_incomeplusnext"
@@ -79,6 +92,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 
 
 
