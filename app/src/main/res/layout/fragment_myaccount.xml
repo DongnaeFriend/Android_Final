@@ -81,6 +81,7 @@
             app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
+            android:id="@+id/tv_incomeAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0원"
@@ -181,7 +182,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentFood"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -239,7 +240,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentSnack"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -296,7 +297,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentMart"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -354,7 +355,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentAlchol"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -412,7 +413,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentShopping"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -470,7 +471,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentHobby"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -528,7 +529,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentHealth"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -586,7 +587,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentLiving"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -643,7 +644,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentFund"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -701,7 +702,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentBeauty"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -759,7 +760,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentTransport"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -817,7 +818,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentTrip"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -875,7 +876,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentEducation"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -933,7 +934,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentBank"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
@@ -991,7 +992,7 @@
 
                 <TextView
                     android:id="@+id/tv_percentEtc"
-                    android:layout_width="wrap_content"
+                    android:layout_width="24sp"
                     android:layout_height="wrap_content"
                     android:text="66%"
                     android:textSize="13dp"
