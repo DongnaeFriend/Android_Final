@@ -35,7 +35,7 @@ data class MoneyHistoryResponse(
     data class HistoryList(
         @SerializedName("id") val id: Int,
         @SerializedName("type") val type: Int,
-        @SerializedName("transactionCategory") val transactionCategory: Int,
+        @SerializedName("transactionCategory") val transactionCategory: String,
         @SerializedName("year") val year: Int,
         @SerializedName("month") val month: Int,
         @SerializedName("day") val day: Int,
@@ -44,6 +44,35 @@ data class MoneyHistoryResponse(
         @SerializedName("memo") val memo: String,
     )
 }
+
+data class AccountAllResponse(
+    @SerializedName("expenditure") val expenditure : Int,
+    @SerializedName("income") val income : Int,
+    @SerializedName("budget") val budget : Int,
+    @SerializedName("expense") val expense : ArrayList<List>
+){
+    data class List(
+        @SerializedName("transactionCategory") val transactionCategory : String,
+        @SerializedName("price") val price : Int,
+    )
+}
+
+data class PostMemo(
+    @SerializedName("memo") val memo : String,
+    @SerializedName("done") val done : Boolean,
+)
+
+data class MemoResponse(
+    @SerializedName("memos") val memos : ArrayList<Memos>
+){
+    data class Memos(
+        @SerializedName("memoId") val memoId : Int,
+        @SerializedName("memo") val memo : String,
+        @SerializedName("done") val done : Boolean,
+        )
+}
+
+
 
 
 

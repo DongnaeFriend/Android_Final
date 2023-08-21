@@ -5,6 +5,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface RetrofitInterfaceTommy {
@@ -43,5 +44,33 @@ interface RetrofitInterfaceTommy {
         @Header("Authorization") authToken: String
     ): Call<MoneyHistoryResponse>
 
+    @GET("api/account/all")
+    fun getAccountAll(
+        @Query("year") year:Int,
+        @Query("month") month:Int,
+        @Header("Authorization") authToken: String
+    ): Call<AccountAllResponse>
+
+    @POST("api/account/memo")
+    fun postAccountMemo(
+        @Query("year") year:Int,
+        @Query("month") month:Int,
+        @Body request : PostMemo,
+        @Header("Authorization") authToken: String
+    ):Call<Void>
+
+    @GET("api/account/memo")
+    fun getMemo(
+        @Query("year") year:Int,
+        @Query("month") month:Int,
+        @Header("Authorization") authToken: String
+    ):Call<MemoResponse>
+
+    @PUT("api/account/memo")
+    fun putMemo(
+        @Query("id") id : Int,
+        @Body request : PostMemo,
+        @Header("Authorization") authToken: String
+    ):Call<Void>
 }
 

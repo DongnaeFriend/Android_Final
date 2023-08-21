@@ -1,6 +1,7 @@
 package com.example.dongnaefriend_android
 
 import android.R
+import android.accounts.Account
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import com.example.dongnaefriend_android.Retrofit2.AccountAllResponse
 import com.example.dongnaefriend_android.Retrofit2.BudgetResponse
 import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
 import com.example.dongnaefriend_android.Retrofit2.RetrofitInterfaceTommy
@@ -25,6 +27,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import java.lang.Math.abs
+import java.security.AllPermission
 
 class MyaccountFragment : Fragment() {
 
@@ -56,6 +59,32 @@ class MyaccountFragment : Fragment() {
 
                     //예산값 넣기
                     setBudget = response.body()?.budget!!
+
+                    // 전송은 성공 but 서버 4xx 에러
+                    Log.d("태그: 에러바디", "response : ${response.errorBody()}")
+                    Log.d("태그: 메시지", "response : ${response.message()}")
+                    Log.d("태그: 코드", "response : ${response.code()}")
+                }
+
+            })
+        }.run()
+
+        Runnable {
+            api.getAccountAll(2023, 8,"Bearer $authToken").enqueue(object : Callback<AccountAllResponse> {
+                // 전송 실패
+                override fun onFailure(call: Call<AccountAllResponse>, t: Throwable) {
+                    Log.d("AccountAll실패", t.message!!)
+                }
+                // 전송 성공
+                override fun onResponse(call: Call<AccountAllResponse>, response: Response<AccountAllResponse>) {
+
+
+                    Log.d("AccountAll성공", "response : expenditure : ${response.body()?.expenditure}")
+                    Log.d("AccountAll성공", "response : income : ${response.body()?.income}") // 정상출력
+                    Log.d("AccountAll성공", "response : Budget :  ${response.body()?.budget}")
+                    Log.d("AccountAll성공", "response : expense : ${response.body()?.expense}")
+
+                    //예산값 넣기
 
                     // 전송은 성공 but 서버 4xx 에러
                     Log.d("태그: 에러바디", "response : ${response.errorBody()}")

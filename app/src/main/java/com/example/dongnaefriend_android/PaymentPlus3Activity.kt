@@ -64,16 +64,16 @@ class PaymentPlus3Activity : AppCompatActivity() {
             val data = PostMoneyHistory(0,category,year,month,day,moneyAmount,0,memo)
             api.postMoneyHistory(data,"Bearer $authToken").enqueue(object: Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>){
-                    Log.d("**********", "response :")
+                    Log.d("지출내역추가", "response :")
                     if (response.isSuccessful.not()){
                         Log.e(ContentValues.TAG, response.toString())
                         return
                     }else{
-                        Log.e(ContentValues.TAG, "포스트 성공")
+                        Log.e(ContentValues.TAG, "지출내역 성공")
                     }
                 }
                 override fun onFailure(call: Call<Void>, t: Throwable){
-                    Log.e(ContentValues.TAG, "연결 실패")
+                    Log.e(ContentValues.TAG, "지출내역 실패")
                     Log.e(ContentValues.TAG, t.toString())
                 }
             })
@@ -86,16 +86,16 @@ class PaymentPlus3Activity : AppCompatActivity() {
             val data = PostMoneyHistory(0,category,year,month,day,moneyAmount,1,memo)
             api.postMoneyHistory(data,"Bearer $authToken").enqueue(object: Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>){
-                    Log.d("********", "response :")
+                    Log.d("지출내역추가 ","response :")
                     if (response.isSuccessful.not()){
                         Log.e(ContentValues.TAG, response.toString())
                         return
                     }else{
-                        Log.e(ContentValues.TAG, "포스트 성공")
+                        Log.e(ContentValues.TAG, "지출내역 성공")
                     }
                 }
                 override fun onFailure(call: Call<Void>, t: Throwable){
-                    Log.e(ContentValues.TAG, "연결 실패")
+                    Log.e(ContentValues.TAG, "지출내역 실패")
                     Log.e(ContentValues.TAG, t.toString())
                 }
             })
@@ -108,16 +108,16 @@ class PaymentPlus3Activity : AppCompatActivity() {
             val data = PostMoneyHistory(0,category,year,month,day,moneyAmount,2,memo)
             api.postMoneyHistory(data,"Bearer $authToken").enqueue(object: Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>){
-                    Log.d("**********", "response :")
+                    Log.d("지출내역 추가", "response :")
                     if (response.isSuccessful.not()){
                         Log.e(ContentValues.TAG, response.toString())
                         return
                     }else{
-                        Log.e(ContentValues.TAG, "포스트 성공")
+                        Log.e(ContentValues.TAG, "지출내역 성공")
                     }
                 }
                 override fun onFailure(call: Call<Void>, t: Throwable){
-                    Log.e(ContentValues.TAG, "연결 실패")
+                    Log.e(ContentValues.TAG, "지출내역 실패")
                     Log.e(ContentValues.TAG, t.toString())
                 }
             })
