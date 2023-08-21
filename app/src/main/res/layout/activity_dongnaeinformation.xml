@@ -65,7 +65,10 @@
         android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@id/toolbar_dongnaeinformation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="scrollable"
+        app:tabMinWidth="20dp">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -78,27 +81,27 @@
             android:text="맛집" />
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="시설" />
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="할인" />
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="같이해요" />
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:text="질문/요청" />
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="공공정보" />
 
