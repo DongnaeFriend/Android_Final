@@ -39,8 +39,20 @@ class DongnaePublicInfoFragment : Fragment() {
 
     private fun initRestaurantRecyclerView() {
         binding.rvDongnaeshare.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        DongnaeshareAdapter = DongnaeshareAdapter()
-        DongnaeshareAdapter.dataList = dongnaeshareData
+        DongnaeshareAdapter = DongnaeshareAdapter().apply {
+            dataList = dongnaeshareData
+
+            // 아이템 클릭 리스너 설정
+            onItemClickListener = object : DongnaeshareAdapter.OnItemClickListener {
+                override fun onItemClick(post: Post) {
+                    val fragmentTransaction = parentFragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.container_main, DongnaeDetailFragment.newInstance(post))
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.commit()
+                }
+            }
+        }
+
         binding.rvDongnaeshare.adapter = DongnaeshareAdapter
     }
 

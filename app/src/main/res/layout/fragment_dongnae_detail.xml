@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    tools:context=".DongnaeDetailFragment">
+
+    <!-- 상단 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/imageViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:src="@drawable/dongnaedetailtop"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/layout_border_style"/>
+
+    <!-- 아이콘 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/blackButtonImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="372dp"
+        android:src="@drawable/backbutton_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewTop" />
+    <!-- "동네정보" 텍스트 뷰 -->
+
+    <!-- "btn_menu" -->
+
+    <TextView
+        android:id="@+id/dongnaeInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:text="동네정보"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@id/blackButtonImageView"
+        app:layout_constraintStart_toEndOf="@+id/blackButtonImageView"
+        app:layout_constraintTop_toTopOf="@id/blackButtonImageView"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <ImageView
+        android:id="@+id/btnMenuImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="120dp"
+        android:src="@drawable/btn_menu"
+        app:layout_constraintStart_toEndOf="@+id/dongnaeInfoTextView"
+        app:layout_constraintTop_toTopOf="@+id/dongnaeInfoTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/dongnaeInfoTextView" />
+
+    <!-- dooly22 텍스트 뷰 -->
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="71dp"
+        android:src="@drawable/detailicon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.108" />
+
+    <TextView
+        android:id="@+id/doolyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13.17dp"
+        android:text="dooly22"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/iconImageView"
+        app:layout_constraintStart_toEndOf="@id/iconImageView"
+        app:layout_constraintTop_toTopOf="@id/iconImageView"
+        app:layout_constraintVertical_bias="0.0" />
+    <!-- 추가된 텍스트 뷰 -->
+    <TextView
+        android:id="@+id/infoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13.17dp"
+        android:text="4분 전 | 조회 46 | 전농동"
+        android:textColor="#61646B"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/iconImageView"
+        app:layout_constraintStart_toEndOf="@id/iconImageView"
+        app:layout_constraintTop_toBottomOf="@id/doolyTextView"
+        app:layout_constraintVertical_bias="0.5"
+
+        />
+    <!-- 추가된 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/itemImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/item_accountshare"
+        app:layout_constraintTop_toBottomOf="@id/infoTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+         />
+    <!-- 추가된 텍스트 뷰 -->
+    <TextView
+        android:id="@+id/reviewTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="기대치에 못미쳤던.. 백미당 후기"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginStart="23dp"
+        app:layout_constraintStart_toStartOf="@id/itemImageView"
+        app:layout_constraintTop_toBottomOf="@id/itemImageView" />
+
+    <!-- loc_detail 이미지 뷰 -->
+    <!-- "전농동" 텍스트 뷰 -->
+    <TextView
+        android:id="@+id/reviewContentTextView"
+        android:layout_width="330dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="유명한 백미당에 가봤는데 후기에서 봤던거랑 다르게 주인분이 너무 불친절하고 가게가 위생적이지 않았어요 맛은 있었는데 가격정도의 만족은 느끼지 못했습니다\n\n(사진은 먹었다는 인증)"
+        android:textColor="#000000"
+
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/itemImageView"
+        app:layout_constraintTop_toBottomOf="@id/reviewTextView" />
+
+    <ImageView
+        android:id="@+id/detailImageView"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/detailimg"
+        app:layout_constraintEnd_toEndOf="@id/itemImageView"
+        app:layout_constraintStart_toStartOf="@id/itemImageView"
+        app:layout_constraintTop_toBottomOf="@id/reviewContentTextView" />
+
+    <ImageView
+        android:id="@+id/locationImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="120dp"
+        android:src="@drawable/loc_detail"
+        app:layout_constraintStart_toStartOf="@id/detailImageView"
+        app:layout_constraintTop_toTopOf="@id/detailImageView" />
+
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전농동"
+        android:textColor="#4600A3"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/locationImageView"
+        app:layout_constraintStart_toEndOf="@id/locationImageView"
+        android:layout_marginStart="4dp" />
+    <!-- bottom 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/detail_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailImageView" />
+    <!-- "대댓글" 텍스트 뷰 -->
+    <TextView
+        android:id="@+id/replyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="      아직 댓글이 없어요.\n\n가장 먼저 댓글을 남겨보세요."
+        android:textColor="#61646B"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/bottom"
+        app:layout_constraintTop_toBottomOf="@id/bottom"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="100dp" />
+    <!-- line.png 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/lineImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/item_accountshare"
+        app:layout_constraintTop_toBottomOf="@id/bottom"
+        android:layout_marginTop="120dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <!-- detailicon 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/commentIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/detailicon"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="@id/lineImageView"
+        app:layout_constraintTop_toBottomOf="@id/lineImageView" />
+    <!-- detail_comment 이미지 뷰 -->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="9dp"
+        android:src="@drawable/detail_comment"
+        app:layout_constraintStart_toEndOf="@id/commentIcon"
+        app:layout_constraintTop_toBottomOf="@id/lineImageView" />
+    <!-- "댓글" 텍스트 뷰 -->
+    <TextView
+        android:id="@+id/commentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="댓글을 입력해 주세요"
+        android:textColor="#61646B"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/commentIcon"
+        app:layout_constraintTop_toBottomOf="@id/lineImageView"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

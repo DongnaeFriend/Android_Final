@@ -33,6 +33,7 @@
             android:textColor="#FFFFFF"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView" />
@@ -71,6 +72,8 @@
         android:layout_marginLeft="17dp"
         android:text="이번달 예산"
         android:textSize="17dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/worksans"
         app:layout_constraintStart_toStartOf="@id/tv_accountbookPreview"
         app:layout_constraintTop_toTopOf="@+id/tv_accountbookPreview" />
 
@@ -81,7 +84,9 @@
         android:layout_marginEnd="40px"
         android:text="223,000원"
         android:textColor="#9932cc"
-        android:textSize="50px"
+        android:fontFamily="@font/worksans"
+        android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_budget"
         app:layout_constraintEnd_toEndOf="@id/tv_accountbookPreview"
         app:layout_constraintTop_toTopOf="@+id/tv_budget" />
@@ -93,6 +98,8 @@
             app:layout_constraintTop_toBottomOf="@id/tv_budget"
             app:layout_constraintStart_toStartOf="@id/tv_accountbookPreview"
             android:text="지출"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             android:textSize="15dp"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="25dp"/>
@@ -105,6 +112,7 @@
         android:text="13.500원"
         android:textColor="#4600A3"
         android:textStyle="bold"
+        android:fontFamily="@font/worksans"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_payment"
         app:layout_constraintStart_toEndOf="@+id/tv_payment"
@@ -116,6 +124,8 @@
         android:layout_height="wrap_content"
         android:text="저축"
         android:textSize="15dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/worksans"
         app:layout_constraintBottom_toBottomOf="@+id/tv_paymentSize"
         app:layout_constraintEnd_toStartOf="@id/tv_bankSize"
         app:layout_constraintStart_toEndOf="@+id/tv_paymentSize"
@@ -129,6 +139,8 @@
         android:text="0원"
         android:textColor="@color/white"
         android:textSize="15dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/worksans"
         app:layout_constraintBottom_toBottomOf="@+id/tv_bank"
         app:layout_constraintEnd_toEndOf="@id/tv_accountbookPreview"
         app:layout_constraintTop_toTopOf="@+id/tv_bank" />
@@ -139,6 +151,8 @@
             android:layout_height="wrap_content"
             android:text="자세히보기 >"
             android:textSize="35px"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintEnd_toEndOf="@id/tv_accountbookPreview"
             app:layout_constraintBottom_toBottomOf="@id/tv_accountbookPreview"
             android:layout_marginEnd="30px"
@@ -156,7 +170,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_accountbookPreview"
         app:layout_constraintVertical_weight="253"
-        android:background="@color/white"/>
+        android:background="@color/white"
+
+        />
 
         <TextView
             android:id="@+id/TV_TodayHotPlace"
@@ -165,6 +181,7 @@
             android:text="🔥오늘의 동네 핫플"
             android:textSize="15dp"
             android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             android:layout_marginLeft="24dp"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="@id/TV_HotPlace"
@@ -183,7 +200,8 @@
             app:layout_constraintVertical_weight="159"
             android:layout_marginHorizontal="24px"
             android:src="@drawable/main_dummy"
-            />
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"/>
 
         <TextView
             android:id="@+id/TV_HotPlaceName1"
@@ -197,7 +215,8 @@
             app:layout_constraintEnd_toStartOf="@id/IV_HotPlace2"
             app:layout_constraintVertical_weight="24"
             android:layout_marginHorizontal="24px"
-            />
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"/>
         <TextView
             android:id="@+id/TV_HotPlaceHash1"
             android:layout_width="0dp"
@@ -210,10 +229,8 @@
             app:layout_constraintEnd_toStartOf="@id/IV_HotPlace2"
             app:layout_constraintVertical_weight="24"
             android:layout_marginHorizontal="24px"
-            />
-
-
-
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"/>
 
 
         <ImageView
@@ -234,6 +251,8 @@
             android:layout_height="0dp"
             android:text="한암동"
             android:textSize="40px"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintTop_toBottomOf="@id/IV_HotPlace2"
             app:layout_constraintBottom_toTopOf="@id/TV_HotPlaceHash2"
             app:layout_constraintStart_toEndOf="@id/IV_HotPlace1"
@@ -247,6 +266,8 @@
             android:layout_height="0dp"
             android:text="#사진맛집 #디저트"
             android:textSize="20px"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintTop_toBottomOf="@id/TV_HotPlaceName2"
             app:layout_constraintBottom_toBottomOf="@id/TV_HotPlace"
             app:layout_constraintStart_toEndOf="@id/IV_HotPlace1"
@@ -254,9 +275,6 @@
             app:layout_constraintVertical_weight="24"
             android:layout_marginHorizontal="24px"
             />
-
-
-
 
 
         <ImageView
@@ -278,6 +296,8 @@
             android:layout_height="0dp"
             android:text="정동길"
             android:textSize="40px"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintTop_toBottomOf="@id/IV_HotPlace3"
             app:layout_constraintBottom_toTopOf="@id/TV_HotPlaceHash3"
             app:layout_constraintStart_toEndOf="@id/IV_HotPlace2"
@@ -291,6 +311,8 @@
             android:layout_height="0dp"
             android:text="#사진맛집 #디저트"
             android:textSize="20px"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintTop_toBottomOf="@id/TV_HotPlaceName3"
             app:layout_constraintBottom_toBottomOf="@id/TV_HotPlace"
             app:layout_constraintStart_toEndOf="@id/IV_HotPlace2"
@@ -319,6 +341,7 @@
             android:layout_height="wrap_content"
             android:text="오늘의 가계부 공유"
             android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             android:textSize="15dp"
             android:layout_marginLeft="24dp"
             app:layout_constraintStart_toStartOf="@id/TV_AccountbookShare"
@@ -345,6 +368,8 @@
             android:layout_height="0dp"
             android:text="dooly"
             android:textSize="40px"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintTop_toBottomOf="@id/IV_AccountBookShare1"
             app:layout_constraintBottom_toTopOf="@id/TV_AccountContent1"
             app:layout_constraintStart_toStartOf="@id/TV_HotPlace"
@@ -358,6 +383,8 @@
             android:layout_height="0dp"
             android:text="오늘 제 소비입니다"
             android:textSize="30px"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintTop_toBottomOf="@id/TV_AccountNickname1"
             app:layout_constraintBottom_toBottomOf="@id/TV_AccountbookShare"
             app:layout_constraintStart_toStartOf="@id/TV_HotPlace"
@@ -389,6 +416,8 @@
             android:layout_height="0dp"
             android:text="무너미"
             android:textSize="40px"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintTop_toBottomOf="@id/IV_AccountBookShare2"
             app:layout_constraintBottom_toTopOf="@id/TV_AccountContent2"
             app:layout_constraintStart_toEndOf="@+id/TV_AccountNickname1"
@@ -396,12 +425,15 @@
             app:layout_constraintVertical_weight="24"
             android:layout_marginHorizontal="24px"
             />
+
         <TextView
             android:id="@+id/TV_AccountContent2"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="#사진맛집 #디저트"
             android:textSize="20px"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
             app:layout_constraintTop_toBottomOf="@id/TV_AccountNickname2"
             app:layout_constraintBottom_toBottomOf="@id/TV_AccountbookShare"
             app:layout_constraintStart_toEndOf="@+id/TV_AccountContent1"
@@ -433,6 +465,8 @@
         android:layout_height="0dp"
         android:text="무너미"
         android:textSize="40px"
+        android:textStyle="bold"
+        android:fontFamily="@font/worksans"
         app:layout_constraintTop_toBottomOf="@id/IV_AccountBookShare3"
         app:layout_constraintBottom_toTopOf="@id/TV_AccountContent3"
         app:layout_constraintStart_toEndOf="@id/TV_AccountNickname2"
@@ -446,6 +480,8 @@
         android:layout_height="0dp"
         android:text="#사진맛집 #디저트"
         android:textSize="20px"
+        android:textStyle="bold"
+        android:fontFamily="@font/worksans"
         app:layout_constraintTop_toBottomOf="@id/TV_AccountNickname3"
         app:layout_constraintBottom_toBottomOf="@id/TV_AccountbookShare"
         app:layout_constraintStart_toEndOf="@+id/TV_AccountContent2"
