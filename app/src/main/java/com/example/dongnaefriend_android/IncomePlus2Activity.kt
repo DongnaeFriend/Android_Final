@@ -13,6 +13,13 @@ class IncomePlus2Activity : AppCompatActivity() {
         binding = ActivityIncomePlus2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var moneyAmount = intent.getIntExtra("text", 0)
+        var year = intent.getIntExtra("year",100).toInt()
+        var month = intent.getIntExtra("month",100).toInt()
+        var day = intent.getIntExtra("day",100).toInt()
+
+        var memo = binding.edittextIncomeplusmemo.toString()
+
         //닫기 버튼
         binding.imageviewIncomeclose2.setOnClickListener{
             val intent = Intent(this, AccountbookActivity::class.java)
@@ -28,23 +35,60 @@ class IncomePlus2Activity : AppCompatActivity() {
         //지출내역 선택
         binding.imageviewAccountcategorySalery.setOnClickListener{
             val intent = Intent(this,IncomePlus3Activity::class.java)
+            intent.putExtra("moneyAmount",moneyAmount)
+            intent.putExtra("category",15)
+            intent.putExtra("year",year)
+            intent.putExtra("month",month)
+            intent.putExtra("day",day)
+            intent.putExtra("memo",memo)
+
             startActivity(intent)
         }
         binding.imageviewAccountcategoryAllowance.setOnClickListener{
             val intent = Intent(this,IncomePlus3Activity::class.java)
+            intent.putExtra("moneyAmount",moneyAmount)
+            intent.putExtra("category",16)
+            intent.putExtra("year",year)
+            intent.putExtra("month",month)
+            intent.putExtra("day",day)
+            intent.putExtra("memo",memo)
+
             startActivity(intent)
         }
         binding.imageviewAccountcategoryCarryover.setOnClickListener{
             val intent = Intent(this,IncomePlus3Activity::class.java)
+            intent.putExtra("moneyAmount",moneyAmount)
+            intent.putExtra("category",17)
+            intent.putExtra("year",year)
+            intent.putExtra("month",month)
+            intent.putExtra("day",day)
+            intent.putExtra("memo",memo)
+
             startActivity(intent)
         }
         binding.imageviewAccountcategoryWithdraw.setOnClickListener{
             val intent = Intent(this,IncomePlus3Activity::class.java)
+            intent.putExtra("moneyAmount",moneyAmount)
+            intent.putExtra("category",18)
+            intent.putExtra("year",year)
+            intent.putExtra("month",month)
+            intent.putExtra("day",day)
+            intent.putExtra("memo",memo)
+
             startActivity(intent)
         }
         binding.imageviewAccountcategoryEtc.setOnClickListener{
             val intent = Intent(this,IncomePlus3Activity::class.java)
+            intent.putExtra("moneyAmount",moneyAmount)
+            intent.putExtra("category",19)
+            intent.putExtra("year",year)
+            intent.putExtra("month",month)
+            intent.putExtra("day",day)
+            intent.putExtra("memo",memo)
+
             startActivity(intent)
         }
+
+        binding.tvMoneyamount.text = moneyAmount.toString()
     }
 }
