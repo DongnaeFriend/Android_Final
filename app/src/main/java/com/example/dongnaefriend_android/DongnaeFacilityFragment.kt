@@ -33,14 +33,23 @@ class DongnaeFacilityFragment : Fragment() {
 
         initRestaurantList()
         initRestaurantRecyclerView()
-
-
     }
 
     private fun initRestaurantRecyclerView() {
         binding.rvDongnaeshare.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         DongnaeshareAdapter = DongnaeshareAdapter()
         DongnaeshareAdapter.dataList = dongnaeshareData
+
+        // 아이템 클릭 리스너 설정
+        DongnaeshareAdapter.onItemClickListener = object : DongnaeshareAdapter.OnItemClickListener {
+            override fun onItemClick(post: Post) {
+                val fragmentTransaction = parentFragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.container_main, DongnaeDetailFragment.newInstance(post)) // container_main은 교체하고자 하는 프래그먼트의 ID입니다.
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
+        }
+
         binding.rvDongnaeshare.adapter = DongnaeshareAdapter
     }
 

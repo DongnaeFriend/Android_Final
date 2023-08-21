@@ -141,4 +141,10 @@
         android:background="@color/white"
         app:itemTextColor="@color/black"
         app:labelVisibilityMode="labeled"/>
+    <FrameLayout
+        android:id="@+id/container_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_dongnaeinformation"
+        app:layout_constraintBottom_toTopOf="@id/nav_bottom" />
 </androidx.constraintlayout.widget.ConstraintLayout>

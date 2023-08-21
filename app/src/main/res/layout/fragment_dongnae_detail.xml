@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    tools:context=".DongnaeDetailFragment">
+
+    <!-- 상단 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/imageViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dongnaedetailtop"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/layout_border_style"/>
+
+    <!-- 아이콘 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="71dp"
+        android:src="@drawable/detailicon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137" />
+
+    <!-- dooly22 텍스트 뷰 -->
+    <TextView
+        android:id="@+id/doolyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13.17dp"
+        android:text="dooly22"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/iconImageView"
+        app:layout_constraintStart_toEndOf="@id/iconImageView"
+        app:layout_constraintTop_toTopOf="@id/iconImageView"
+        app:layout_constraintVertical_bias="0.0" />
+    <!-- 추가된 텍스트 뷰 -->
+    <TextView
+        android:id="@+id/infoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13.17dp"
+        android:text="4분 전 | 조회 46 | 전농동"
+        android:textColor="#61646B"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/iconImageView"
+        app:layout_constraintStart_toEndOf="@id/iconImageView"
+        app:layout_constraintTop_toBottomOf="@id/doolyTextView"
+        app:layout_constraintVertical_bias="0.5"
+
+        />
+    <!-- 추가된 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/itemImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/item_accountshare"
+        app:layout_constraintTop_toBottomOf="@id/infoTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="163dp" />
+    <!-- 추가된 텍스트 뷰 -->
+    <TextView
+        android:id="@+id/reviewTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="기대치에 못미쳤던.. 백미당 후기"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:layout_marginStart="23dp"
+        app:layout_constraintStart_toStartOf="@id/itemImageView"
+        app:layout_constraintTop_toBottomOf="@id/itemImageView" />
+
+    <TextView
+        android:id="@+id/reviewContentTextView"
+        android:layout_width="350dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="20dp"
+        android:text="유명한 백미당에 가봤는데 후기에서 봤던거랑 다르게 주인분이 너무 불친절하고 가게가 위생적이지 않았어요 맛은 있었는데 가격정도의 만족은 느끼지 못했습니다\n\n\n\n(사진은 먹었다는 인증)"
+        android:textColor="#000000"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@id/reviewContentTextView"
+        app:layout_constraintTop_toBottomOf="@id/reviewTextView"
+
+        tools:layout_editor_absoluteX="23dp" />
+    "/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
