@@ -11,50 +11,49 @@ import com.example.dongnaefriend_android.databinding.FragmentDongnaeshareBinding
 import model.Post
 
 class DongnaeRestaurantFragment : Fragment() {
-    lateinit var binding: FragmentDongnaeshareBinding
-    private lateinit var DongnaeshareAdapter: DongnaeshareAdapter
+    private lateinit var binding: FragmentDongnaeshareBinding
+    private lateinit var adapter: DongnaeshareAdapter
     private val dongnaeshareData = mutableListOf<Post>()
-
-    override fun onCreate(savedInstanceState: Bundle?){
-        super.onCreate(savedInstanceState)
-    }
-    // image_write의 클릭 리스너 설정
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDongnaeshareBinding.inflate(inflater, container,false)
+        binding = FragmentDongnaeshareBinding.inflate(inflater, container, false)
 
+        initRestaurantList()
+        initRestaurantRecyclerView()
+
+        binding.btnDongnaeshare.setOnClickListener {
+            val fragmentTransaction = parentFragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.container_dongnaewrite, DongnaeWriteFragment())
+            (activity as DongnaeInformationActivity).goneForWrite()
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
+        }
 
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        initRestaurantList()
-        initRestaurantRecyclerView()
-        binding.btnDongnaeshare.setOnClickListener{
-            // 버튼 클릭 시 DongnaeWriteFragment를 표시하도록 프래그먼트 트랜잭션 설정
-            val fragmentTransaction = parentFragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.container_dongnaewrite, DongnaeWriteFragment())
-            (activity as DongnaeInformationActivity).goneForWrite()
-            fragmentTransaction.addToBackStack(null) // 이전 프래그먼트를 스택에 추가
-            fragmentTransaction.commit()
-        }
-
-
-
-    }
-
     private fun initRestaurantRecyclerView() {
         binding.rvDongnaeshare.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        DongnaeshareAdapter = DongnaeshareAdapter()
-        DongnaeshareAdapter.dataList = dongnaeshareData
-        binding.rvDongnaeshare.adapter = DongnaeshareAdapter
+        adapter = DongnaeshareAdapter().apply {
+            dataList = dongnaeshareData
+            onItemClickListener = object : DongnaeshareAdapter.OnItemClickListener {
+                override fun onItemClick(post: Post) {
+                    // TODO: 여기서 fragment_dongnae_detail.xml을 보여주는 프래그먼트로 전환해야 합니다.
+                    // 예:
+                    val fragmentTransaction = parentFragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.container_main, DongnaeDetailFragment.newInstance(post))
+                    fragmentTransaction.addToBackStack(null)
+                    fragmentTransaction.commit()
+                }
+            }
+        }
+        binding.rvDongnaeshare.adapter = adapter
     }
+
 
     private fun initRestaurantList() {
         dongnaeshareData.addAll(
@@ -107,4 +106,3 @@ class DongnaeRestaurantFragment : Fragment() {
 
 
 }
-

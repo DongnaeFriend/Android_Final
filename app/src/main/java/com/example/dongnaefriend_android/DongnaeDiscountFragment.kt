@@ -28,7 +28,7 @@ class DongnaeDiscountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDongnaeshareBinding.inflate(inflater, container,false)
+        binding = FragmentDongnaeshareBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,14 +37,23 @@ class DongnaeDiscountFragment : Fragment() {
 
         initRestaurantList()
         initRestaurantRecyclerView()
-
-
     }
 
     private fun initRestaurantRecyclerView() {
         binding.rvDongnaeshare.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         DongnaeshareAdapter = DongnaeshareAdapter()
         DongnaeshareAdapter.dataList = dongnaeshareData
+
+        // 아이템 클릭 리스너 설정
+        DongnaeshareAdapter.onItemClickListener = object : DongnaeshareAdapter.OnItemClickListener {
+            override fun onItemClick(post: Post) {
+                val fragmentTransaction = parentFragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.id.container_main, DongnaeDetailFragment.newInstance(post))
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+            }
+        }
+
         binding.rvDongnaeshare.adapter = DongnaeshareAdapter
     }
 
