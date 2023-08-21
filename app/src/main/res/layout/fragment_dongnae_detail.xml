@@ -22,10 +22,46 @@
 
     <!-- 아이콘 이미지 뷰 -->
     <ImageView
+        android:id="@+id/blackButtonImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="372dp"
+        android:src="@drawable/backbutton_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewTop" />
+    <!-- "동네정보" 텍스트 뷰 -->
+
+    <!-- "btn_menu" -->
+
+    <TextView
+        android:id="@+id/dongnaeInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:text="동네정보"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@id/blackButtonImageView"
+        app:layout_constraintStart_toEndOf="@+id/blackButtonImageView"
+        app:layout_constraintTop_toTopOf="@id/blackButtonImageView"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <ImageView
+        android:id="@+id/btnMenuImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="120dp"
+        android:src="@drawable/btn_menu"
+        app:layout_constraintStart_toEndOf="@+id/dongnaeInfoTextView"
+        app:layout_constraintTop_toTopOf="@+id/dongnaeInfoTextView"
+        app:layout_constraintBottom_toBottomOf="@+id/dongnaeInfoTextView" />
+    <ImageView
         android:id="@+id/iconImageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="71dp"
         android:src="@drawable/detailicon"
@@ -72,7 +108,8 @@
         app:layout_constraintTop_toBottomOf="@id/infoTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="163dp" />
+        android:layout_marginTop="15dp"
+         />
     <!-- 추가된 텍스트 뷰 -->
     <TextView
         android:id="@+id/reviewTextView"
@@ -81,7 +118,7 @@
         android:layout_marginTop="16dp"
         android:text="기대치에 못미쳤던.. 백미당 후기"
         android:textColor="#000000"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:layout_marginStart="23dp"
         app:layout_constraintStart_toStartOf="@id/itemImageView"
@@ -89,18 +126,47 @@
 
     <TextView
         android:id="@+id/reviewContentTextView"
-        android:layout_width="350dp"
-        android:layout_height="270dp"
+        android:layout_width="330dp"
+        android:layout_height="160dp"
         android:layout_marginTop="20dp"
-        android:text="유명한 백미당에 가봤는데 후기에서 봤던거랑 다르게 주인분이 너무 불친절하고 가게가 위생적이지 않았어요 맛은 있었는데 가격정도의 만족은 느끼지 못했습니다\n\n\n\n(사진은 먹었다는 인증)"
-        android:textColor="#000000"
-        android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="@id/reviewContentTextView"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="@id/itemImageView"
         app:layout_constraintTop_toBottomOf="@id/reviewTextView"
 
-        tools:layout_editor_absoluteX="23dp" />
-    "/>
+        android:text="유명한 백미당에 가봤는데 후기에서 봤던거랑 다르게 주인분이 너무 불친절하고 가게가 위생적이지 않았어요 맛은 있었는데 가격정도의 만족은 느끼지 못했습니다\n\n\n\n(사진은 먹었다는 인증)"
+        android:textColor="#000000"
+        android:textSize="15dp" />
+    <!-- detailimg.png 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/detailImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/detailimg"
+        app:layout_constraintTop_toBottomOf="@id/reviewContentTextView"
+        app:layout_constraintStart_toStartOf="@id/itemImageView"
+        app:layout_constraintEnd_toEndOf="@id/itemImageView"
+        android:layout_marginTop="16dp" />
 
-
+    <!-- loc_detail 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/locationImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/loc_detail"
+        app:layout_constraintTop_toTopOf="@id/detailImageView"
+        app:layout_constraintStart_toStartOf="@id/detailImageView"
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="240dp" />
+    <!-- "전농동" 텍스트 뷰 -->
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전농동"
+        android:textColor="#4600A3"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/locationImageView"
+        app:layout_constraintStart_toEndOf="@id/locationImageView"
+        android:layout_marginStart="4dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
