@@ -367,7 +367,9 @@
                     android:id="@+id/const_list6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20sp">
+                    android:layout_marginHorizontal="20sp"
+
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/img_list6"
@@ -420,7 +422,10 @@
                     android:id="@+id/const_list7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20sp">
+                    android:layout_marginHorizontal="20sp"
+
+                    android:visibility="gone">
+
 
                     <ImageView
                         android:id="@+id/img_list7"
@@ -473,7 +478,10 @@
                     android:id="@+id/const_list8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20sp">
+                    android:layout_marginHorizontal="20sp"
+
+                    android:visibility="gone">
+
 
                     <ImageView
                         android:id="@+id/img_list8"
@@ -526,9 +534,11 @@
                     android:id="@+id/const_list9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20sp">
+                    android:layout_marginHorizontal="20sp"
+                    android:visibility="gone">
 
-                    <ImageView
+
+                <ImageView
                         android:id="@+id/img_list9"
                         android:layout_width="25sp"
                         android:layout_height="wrap_content"
@@ -579,9 +589,12 @@
                     android:id="@+id/const_list10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20sp">
+                    android:layout_marginHorizontal="20sp"
 
-                    <ImageView
+                    android:visibility="gone">
+
+
+                <ImageView
                         android:id="@+id/img_list10"
                         android:layout_width="25sp"
                         android:layout_height="wrap_content"
