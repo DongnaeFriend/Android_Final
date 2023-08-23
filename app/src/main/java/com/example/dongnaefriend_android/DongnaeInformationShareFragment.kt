@@ -388,7 +388,7 @@ class DongnaeInformationShareFragment : Fragment() {
                 Post(
                     310,
                     R.drawable.image_myaccount,
-                    "안녕하세요", "1", "3","본문입니다",
+                    "방탈출 좋아하는 2030 모여라", "1", "3","본문입니다",
                     "xx동","5","3"
                 ),
                 Post(311,
