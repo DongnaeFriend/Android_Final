@@ -1,19 +1,158 @@
 package com.example.dongnaefriend_android
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.dongnaefriend_android.Retrofit2.BudgetResponse
+import com.example.dongnaefriend_android.Retrofit2.PeedResponse
+import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
+import com.example.dongnaefriend_android.Retrofit2.RetrofitInterfaceTommy
 import com.example.dongnaefriend_android.adapter.DongnaeshareAdapter
 import com.example.dongnaefriend_android.databinding.FragmentDongnaeshareBinding
 import model.Post
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 class DongnaeRestaurantFragment : Fragment() {
     private lateinit var binding: FragmentDongnaeshareBinding
     private lateinit var adapter: DongnaeshareAdapter
     private val dongnaeshareData = mutableListOf<Post>()
+    var size = 0
+
+
+    private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
+    private val api: RetrofitInterfaceTommy =
+        retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
+    private val authToken =
+        "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+
+
+        Runnable {
+            api.getPeed("", 0, "createdAt", "Bearer $authToken")
+                .enqueue(object : Callback<PeedResponse> {
+                    // 전송 실패
+                    override fun onFailure(call: Call<PeedResponse>, t: Throwable) {
+                        Log.d("피드 get 실패", t.message!!)
+                    }
+
+                    // 전송 성공
+                    override fun onResponse(
+                        call: Call<PeedResponse>,
+                        response: Response<PeedResponse>
+                    ) {
+                        Log.d("피드 get", "response : ${response.body()?.contents}") // 정상출력
+
+                        var Response = response.body()?.contents!!
+                        size = Response.size
+
+                        /*
+                        if(size>=1) {
+                            var peed0 = Response[0].toString()
+                            var split = peed0.split("Contents(",", ",")")
+                            var id = split[0].toInt()
+                            var town = split[1]
+                            var category = split[2]
+                            var title = split[3]
+                            var content= split[4]
+                            var createdAt = split[6]
+                            var view = split[7]
+                            var commentCount = split[8]
+                            var likes = split[9]
+
+                            dongnaeshareData.addAll(
+                                listOf<Post>(
+
+                                    Post(
+                                        id,
+                                        R.drawable.image_myaccount,
+                                        title, commentCount, likes, content,
+                                        town, createdAt, view
+                                    )
+
+                                )
+                            )
+                        }
+
+                        if(size>=2) {
+                            var peed1 = Response[1].toString()
+                            var split = peed1.split("Contents(",", ",")")
+                            var id = split[0].toInt()
+                            var town = split[1]
+                            var category = split[2]
+                            var title = split[3]
+                            var content= split[4]
+                            var createdAt = split[6]
+                            var view = split[7]
+                            var commentCount = split[8]
+                            var likes = split[9]
+
+                            dongnaeshareData.addAll(
+                                listOf<Post>(
+
+                                    Post(
+                                        id,
+                                        R.drawable.image_myaccount,
+                                        title, commentCount, likes, content,
+                                        town, createdAt, view
+                                    )
+
+                                )
+                            )
+                        }
+
+                        if(size>=3) {
+                            var peed2 = Response[2].toString()
+                            var split = peed2.split("Contents(",", ",")")
+                            var id = split[0].toInt()
+                            var town = split[1]
+                            var category = split[2]
+                            var title = split[3]
+                            var content= split[4]
+                            var createdAt = split[6]
+                            var view = split[7]
+                            var commentCount = split[8]
+                            var likes = split[9]
+
+                            dongnaeshareData.addAll(
+                                listOf<Post>(
+
+                                    Post(
+                                        id,
+                                        R.drawable.image_myaccount,
+                                        title, commentCount, likes, content,
+                                        town, createdAt, view
+                                    )
+
+                                )
+                            )
+                        }
+
+                         */
+
+
+
+
+                        // 전송은 성공 but 서버 4xx 에러
+                        Log.d("태그: 에러바디", "response : ${response.errorBody()}")
+                        Log.d("태그: 메시지", "response : ${response.message()}")
+                        Log.d("태그: 코드", "response : ${response.code()}")
+                    }
+
+                })
+        }.run()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,27 +164,28 @@ class DongnaeRestaurantFragment : Fragment() {
         initRestaurantList()
         initRestaurantRecyclerView()
 
-        binding.btnDongnaeshare.setOnClickListener {
-            val fragmentTransaction = parentFragmentManager.beginTransaction()
-            fragmentTransaction.replace(R.id.container_dongnaewrite, DongnaeWriteFragment())
-            (activity as DongnaeInformationActivity).goneForWrite()
-            fragmentTransaction.addToBackStack(null)
-            fragmentTransaction.commit()
-        }
+
+
+
 
         return binding.root
     }
 
     private fun initRestaurantRecyclerView() {
-        binding.rvDongnaeshare.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        binding.rvDongnaeshare.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         adapter = DongnaeshareAdapter().apply {
             dataList = dongnaeshareData
             onItemClickListener = object : DongnaeshareAdapter.OnItemClickListener {
                 override fun onItemClick(post: Post) {
                     // TODO: 여기서 fragment_dongnae_detail.xml을 보여주는 프래그먼트로 전환해야 합니다.
+                    (activity as DongnaeInformationActivity).goneForDetail()
                     // 예:
                     val fragmentTransaction = parentFragmentManager.beginTransaction()
-                    fragmentTransaction.replace(R.id.container_main, DongnaeDetailFragment.newInstance(post))
+                    fragmentTransaction.replace(
+                        R.id.container_main,
+                        DongnaeDetailFragment.newInstance(post)
+                    )
                     fragmentTransaction.addToBackStack(null)
                     fragmentTransaction.commit()
                 }
@@ -58,51 +198,59 @@ class DongnaeRestaurantFragment : Fragment() {
     private fun initRestaurantList() {
         dongnaeshareData.addAll(
             listOf<Post>(
-                Post(
-                    R.drawable.image_myaccount,
-                    "안녕하세요", "1", "3","본문입니다",
-                    "xx동","5","3"
-                ),
-                Post(
-                    R.drawable.image_myaccount,
-                    "학교근처맛집", "1", "3","학교 근처에 먹을게 없어요 배고파요",
-                    "00동","5","3"
-                ),
-                Post(
-                    R.drawable.image_myaccount,
-                    "출근중인데", "1", "3","집에가고싶다...",
-                    "ㅁㅁ동","5","3"
-                ),
-                Post(
-                    R.drawable.image_myaccount,
-                    "오늘 저희 강아지가", "1", "3","휴지를 다 물어뜯어놨네요. 어떻게이런일이",
-                    "ㅎㅎ동","5","3"
-                ),
-                Post(
-                    R.drawable.image_myaccount,
-                    "구내식당", "1", "3","노맛",
-                    "ㅇㅇ동","5","3"
-                ),
-                Post(
-                    R.drawable.image_myaccount,
-                    "안녕하세요", "1", "3","본문입니다",
-                    "ㄹㄹ동","5","3"
-                ),
-                Post(
-                    R.drawable.image_myaccount,
-                    "안녕하세요", "1", "3","본문입니다",
-                    "ㅂㅂ동","5","3"
-                ),
-                Post(
-                    R.drawable.image_myaccount,
-                    "안녕하세요", "1", "3","본문입니다",
-                    "ㅎㅎ동","5","3"
-                )
 
-            )
+                Post(
+                    110,
+                    R.drawable.image_myaccount,
+                    "안녕하세요", "1", "3", "본문입니다",
+                    "xx동", "5", "3"
+                ),
+                Post(
+                    111,
+                    R.drawable.image_myaccount,
+                    "학교근처맛집", "1", "3", "학교 근처에 먹을게 없어요 배고파요",
+                    "00동", "5", "3"
+                ),
+                Post(
+                    112,
+                    R.drawable.image_myaccount,
+                    "출근중인데", "1", "3", "집에가고싶다...",
+                    "ㅁㅁ동", "5", "3"
+                ),
+                Post(
+                    113,
+                    R.drawable.image_myaccount,
+                    "오늘 저희 강아지가", "1", "3", "휴지를 다 물어뜯어놨네요. 어떻게이런일이",
+                    "ㅎㅎ동", "5", "3"
+                ),
+                Post(
+                    114,
+                    R.drawable.image_myaccount,
+                    "구내식당", "1", "3", "노맛",
+                    "ㅇㅇ동", "5", "3"
+                ),
+                Post(
+                    115,
+                    R.drawable.image_myaccount,
+                    "안녕하세요", "1", "3", "본문입니다",
+                    "ㄹㄹ동", "5", "3"
+                ),
+                Post(
+                    116,
+                    R.drawable.image_myaccount,
+                    "안녕하세요", "1", "3", "본문입니다",
+                    "ㅂㅂ동", "5", "3"
+                ),
+                Post(
+                    117,
+                    R.drawable.image_myaccount,
+                    "안녕하세요", "1", "3", "본문입니다",
+                    "ㅎㅎ동", "5", "3"
+                ),
+
+
+                )
         )
     }
-
-
 
 }

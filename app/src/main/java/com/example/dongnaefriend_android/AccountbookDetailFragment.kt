@@ -17,7 +17,6 @@ import com.example.dongnaefriend_android.Retrofit2.MoneyHistoryResponse
 import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
 import com.example.dongnaefriend_android.Retrofit2.RetrofitInterfaceTommy
 import com.example.dongnaefriend_android.adapter.AccountshareAdapter
-import com.example.dongnaefriend_android.adapter.PaymentListAdapter
 import com.example.dongnaefriend_android.databinding.FragmentAccountbookBinding
 import com.example.dongnaefriend_android.databinding.FragmentAccountbookDetailBinding
 import model.PaymentListData
@@ -34,7 +33,6 @@ import java.util.Date
 class AccountbookDetailFragment : Fragment() {
 
     private lateinit var binding : FragmentAccountbookDetailBinding
-    private lateinit var paymentListAdapter : PaymentListAdapter
     private val PaymentListData = mutableListOf<PaymentListData>()
     private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
     private val api: RetrofitInterfaceTommy = retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현

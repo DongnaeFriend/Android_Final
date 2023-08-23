@@ -25,7 +25,7 @@ interface RetrofitInterfaceTommy {
         @Query("year") year: Int,
         @Query("month") month: Int,
         @Query("amount") amount: Int,
-        @Body request: PostBudget,
+        //@Body request: PostBudget,
         @Header("Authorization") authToken: String
     ): Call<Void>
 
@@ -72,5 +72,22 @@ interface RetrofitInterfaceTommy {
         @Body request : PostMemo,
         @Header("Authorization") authToken: String
     ):Call<Void>
+
+
+    @POST("town-information")
+    fun postPeed(
+        @Body request : PostPeed,
+        @Header("Authorization") authToken: String
+    ):Call<Void>
+
+    @GET("town-information/search")
+    fun getPeed(
+        @Query("keyword") keyoword : String,
+        @Query("category") category : Int,
+        @Query("sortBy") sortBy : String,
+        @Header("Authorization") authToken: String
+    ):Call<PeedResponse>
+
+
 }
 

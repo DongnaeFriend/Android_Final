@@ -10,6 +10,7 @@
     tools:context=".DongnaeHomeFragment">
 
     <FrameLayout
+        android:id="@+id/container_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -20,17 +21,31 @@
         android:src="@drawable/home_rectangle"
         android:layout_marginTop="13dp"/>
 
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="              전농동  \n       "
+            android:textColor="#4600a3"
+            android:textSize="16sp"
+            android:layout_marginTop="26.5dp"
+            android:layout_marginStart="45dp"
+            android:textStyle="bold"
+            />
+
     <TextView
         android:id="@+id/textView_home_description"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="      이번주 전농동에서\n      가장 인기있는 글들을 구경해보세요!💫"
+        android:text="      이번주              에서\n      가장 인기있는 글들을 구경해보세요!🫠"
         android:textColor="#000000"
         android:textSize="16sp"
         android:layout_marginTop="28.63dp"
         android:layout_marginStart="45dp"
         />
+
+
 
     <ImageView
         android:layout_width="match_parent"
@@ -60,6 +75,7 @@
 
         <!-- 글 목록 1 -->
         <LinearLayout
+            android:id="@+id/restaurant1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -88,11 +104,19 @@
                 android:textColor="#61646B"/>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/restaurant2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/item_accountshare"
             android:layout_marginTop="10dp"/>
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -117,6 +141,8 @@
             android:text="전농동 23.08.14 조회 484 댓글 48"
             android:textSize="8sp"
             android:textColor="#61646B"/>
+
+        </LinearLayout>
 
     </LinearLayout>
     <!-- ... 기존의 코드 ... -->

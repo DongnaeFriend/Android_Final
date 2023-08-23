@@ -58,41 +58,49 @@ class DongnaeTogetherFragment : Fragment() {
         dongnaeshareData.addAll(
             listOf<Post>(
                 Post(
+                    410,
                     R.drawable.image_myaccount,
                     "안녕하세요", "1", "3","본문입니다",
                     "xx동","5","3"
                 ),
                 Post(
+                    411,
                     R.drawable.image_myaccount,
                     "학교근처맛집", "1", "3","학교 근처에 먹을게 없어요 배고파요",
                     "00동","5","3"
                 ),
                 Post(
+                    412,
                     R.drawable.image_myaccount,
                     "출근중인데", "1", "3","집에가고싶다...",
                     "ㅁㅁ동","5","3"
                 ),
                 Post(
+                    413,
                     R.drawable.image_myaccount,
                     "오늘 저희 강아지가", "1", "3","휴지를 다 물어뜯어놨네요. 어떻게이런일이",
                     "ㅎㅎ동","5","3"
                 ),
                 Post(
+                    414,
                     R.drawable.image_myaccount,
                     "구내식당", "1", "3","노맛",
                     "ㅇㅇ동","5","3"
                 ),
                 Post(
+                    415,
                     R.drawable.image_myaccount,
                     "안녕하세요", "1", "3","본문입니다",
                     "ㄹㄹ동","5","3"
                 ),
                 Post(
+                    416,
                     R.drawable.image_myaccount,
                     "안녕하세요", "1", "3","본문입니다",
                     "ㅂㅂ동","5","3"
                 ),
                 Post(
+                    417,
                     R.drawable.image_myaccount,
                     "안녕하세요", "1", "3","본문입니다",
                     "ㅎㅎ동","5","3"

@@ -1,5 +1,6 @@
 package com.example.dongnaefriend_android
 
+import DongnaeDetailFragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,12 +19,31 @@ class DongnaeHomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDongnaeHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentDongnaeHomeBinding.inflate(inflater)
+
+
+
+
+
+
+
+            // 예:
+        binding.restaurant2.setOnClickListener {
+            parentFragmentManager.beginTransaction().replace(com.example.dongnaefriend_android.R.id.container_detail,DongnaeDetailFragment()).commit()
+            (activity as DongnaeInformationActivity).goneForDetail()
+        }
+
+
+
+
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         // DongnaeInformationActivity의 imageWrite ImageView
 //        val imageWrite: ImageView? = activity?.findViewById(R.id.image_write)

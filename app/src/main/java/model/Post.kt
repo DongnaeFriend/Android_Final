@@ -3,6 +3,7 @@ package model
 import java.io.Serializable
 
 data class Post(
+    val sequence : Int,
     val cover: Int,
     val title: String,
     val mention: String,
