@@ -387,32 +387,32 @@ class DongnaeInformationShareFragment : Fragment() {
             listOf<Post>(
                 Post(
                     310,
-                    R.drawable.image_myaccount,
+                    R.drawable.info_1,
                     "청년1인가구 재무교육안내", "14", "0","신청기간: 2023. 9. 6까지",
                     "전농","4일","680"
                 ),
                 Post(311,
-                    R.drawable.image_myaccount,
+                    R.drawable.info_2,
                     "동대문오랑 청년 1인가구 집을 고쳐준대요!", "12", "0","동대문구에 거주하는 1인 가구 청년을 대상으로 동대문 오랑에서",
                     "전농","4일","420"
                 ),
                 Post(
                     312,
-                    R.drawable.image_myaccount,
-                    "출근중인데", "1", "3","집에가고싶다...",
-                    "ㅁㅁ동","5","3"
+                    R.drawable.info_3,
+                    "민방위", "1", "5","오늘 훈련문자 왔어요 참고하세요",
+                    "전농","3시간","35"
                 ),
                 Post(
                     313,
-                    R.drawable.image_myaccount,
-                    "오늘 저희 강아지가", "1", "3","휴지를 다 물어뜯어놨네요. 어떻게이런일이",
-                    "ㅎㅎ동","5","3"
+                    R.drawable.info_4,
+                    "새로 오픈해서 50% 할인하네요~", "2", "1","라미 스킨케어 첫방문 50% 할인이래요 저도 가보려고요 ~",
+                    "장안","4시간","50"
                 ),
                 Post(
-                    314,
-                    R.drawable.image_myaccount,
-                    "구내식당", "1", "3","노맛",
-                    "ㅇㅇ동","5","3"
+                    313,
+                    R.drawable.info_5,
+                    "함께해요 동대문구 예술인들의 일상 문화 페스티벌", "1", "6","10월 10일은 동대문구 예술인들의",
+                    "답십리","6시간","230"
                 ),
                 Post(
                     315,
