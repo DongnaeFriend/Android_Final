@@ -387,9 +387,9 @@ class DonggnaeEtcFragment : Fragment() {
             listOf<Post>(
                 Post(
                     610,
-                    R.drawable.image_myaccount,
-                    "안녕하세요", "1", "3","본문입니다",
-                    "xx동","5","3"
+                    R.drawable.etc1,
+                    "강아지 혼자 돌아다녀요", "30", "15","새벽 12시 50분쯤에 밝은 갈색 작은 강아지 혼자 돌아다니네요",
+                    "답십리","3시간","322"
                 ),
                 Post(
                     611,
