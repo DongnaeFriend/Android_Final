@@ -389,7 +389,7 @@ class DongnaeFacilityFragment : Fragment() {
             listOf<Post>(
                 Post(
                     210,
-                    R.drawable.image_myaccount,
+                    R.drawable.fac1,
                     "휘경동 교통사고 병원", "1", "0","동네친구 동친분들께 휘경동 사거리 근처 주변에 교통사고\n전문으로 입원실 갖춰진 병원좀 추천 부탁 드립니다.",
                     "휘경","12분","12"
                 ),
