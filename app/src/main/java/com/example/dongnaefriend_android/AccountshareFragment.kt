@@ -181,23 +181,23 @@ class AccountshareFragment : Fragment() {
             listOf<AccountsharePost>(
                 AccountsharePost(
                     R.drawable.img_accountshare_dummy,
-                    "안녕하세요", "0", "0","본문입니다",
-                    "1","0",R.drawable.item_accountshare_category_untouched,"기타"
+                    "1인가구 도시가스 요금이 너무 많이 나와 질문", "0", "0","1인가구 작은 투룸 빌라에 살고있는 자취생입니다",
+                    "4","0",R.drawable.item_accountshare_category_untouched,"고민"
                 ),
                 AccountsharePost(
                     R.drawable.img_accountshare_dummy,
-                    "학교근처맛집", "0", "2","학교 근처에 먹을게 없어요 배고파요",
-                    "2","5",R.drawable.item_accountshare_category_untouched,"고민"
+                    "냉방비 줄이는 꿀팁", "3", "1","오늘 아침 tv에서 봤는데 에어컨 필터에 먼지가",
+                    "10","3",R.drawable.img2,"꿀팁"
                 ),
                 AccountsharePost(
                     R.drawable.img_accountshare_dummy,
-                    "출근중인데", "1", "3","집에가고싶다...",
-                    "3","5",R.drawable.item_accountshare_category_untouched,"고민"
+                    "유럽 여행 갈까요/말까요", "0", "2","첫 해외여행으로 유럽 여행을 가려는데",
+                    "24","46",R.drawable.img3,"기타"
                 ),
                 AccountsharePost(
                     R.drawable.img_accountshare_dummy,
-                    "서x웨이 싸게 먹는법", "3", "5","서x웨이 싸게 먹는 법 알려드립니다",
-                    "5","4",R.drawable.item_accountshare_category_untouched,"꿀팁"
+                    "여러분 어떤 가계부 쓰시나요?", "10", "0","동네친구 가계부가 참 좋은 것 같은데",
+                    "50","190",R.drawable.img4,"고민"
                 ),
                 AccountsharePost(
                     R.drawable.img_accountshare_dummy,
