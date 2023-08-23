@@ -72,6 +72,33 @@ data class MemoResponse(
         )
 }
 
+data class PostPeed(
+    @SerializedName("category") val category : Int,
+    @SerializedName("title") val title : String,
+    @SerializedName("content") val content : String,
+    @SerializedName("place") val place : String,
+    @SerializedName("placeLocation") val placeLocation : String,
+    )
+
+
+data class PeedResponse(
+    @SerializedName("contents") val contents : List<Contents>
+){
+    data class Contents(
+        @SerializedName("id") val id : Long,
+        @SerializedName("town") val town : String,
+        @SerializedName("category") val category : Int,
+        @SerializedName("title") val title : String,
+        @SerializedName("content") val content : String,
+        @SerializedName("imageUrl") val  imageUrl : String,
+        @SerializedName("createdAt") val createdAt : String,
+        @SerializedName("view") val view : Int,
+        @SerializedName("commentCount") val commentCount : Int,
+        @SerializedName("likes") val likes : Int,
+    )
+}
+
+
 
 
 

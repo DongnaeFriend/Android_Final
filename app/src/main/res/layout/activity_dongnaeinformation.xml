@@ -6,6 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DongnaeInformationActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_forGone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nav_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_dongnaeinformation"
@@ -112,14 +122,14 @@
         android:id="@+id/container_dongnae"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/nav_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tabLayout" />
 
     <FrameLayout
         android:id="@+id/container_dongnaewrite"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/nav_bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tabLayout" />
  
 
@@ -133,6 +143,9 @@
 
 
     </RelativeLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_bottom"
         android:layout_width="0dp"
@@ -148,7 +161,18 @@
         android:id="@+id/container_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_dongnaeinformation"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/nav_bottom" />
+
+
+    <ImageButton
+        android:id="@+id/btn_dongnaeshare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dongnae_write"
+        android:layout_marginBottom="100dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

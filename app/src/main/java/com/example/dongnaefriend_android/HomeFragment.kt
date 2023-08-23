@@ -25,6 +25,13 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding.tvAccountdetail.setOnClickListener {
+            val intent = Intent(getActivity(), AccountbookActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
         return binding.root
     }
 

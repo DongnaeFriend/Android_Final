@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".DongnaeWriteFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_complete"
+        android:background="@drawable/layout_border_style"
+        android:layout_marginBottom="-20sp"/>
+
     <TextView
         android:id="@+id/textview"
         android:layout_width="wrap_content"
@@ -20,6 +31,138 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/const1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/layout_border_style"
+        android:paddingBottom="20sp">
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주제"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15sp"
+            android:layout_marginStart="30sp"/>
+
+        <Button
+            android:id="@+id/btn_restaurant"
+            android:layout_width="76sp"
+            android:layout_height="40sp"
+            android:text="맛집"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_category"
+            android:layout_marginTop="5sp"
+            android:textColor="#61646b"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
+            android:backgroundTint="#efeff0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20sp"/>
+        <Button
+            android:id="@+id/btn_facility"
+            android:layout_width="76sp"
+            android:layout_height="40sp"
+            android:text="시설"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_category"
+            android:layout_marginTop="5sp"
+            app:layout_constraintStart_toEndOf="@id/btn_restaurant"
+            android:layout_marginStart="10sp"
+            android:textColor="#61646b"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
+            android:backgroundTint="#efeff0"/>
+        <Button
+            android:id="@+id/btn_disccount"
+            android:layout_width="76sp"
+            android:layout_height="40sp"
+            android:text="할인"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_category"
+            android:layout_marginTop="5sp"
+            app:layout_constraintStart_toEndOf="@id/btn_facility"
+            android:layout_marginStart="10sp"
+            android:textColor="#61646b"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
+            android:backgroundTint="#efeff0"/>
+
+        <Button
+            android:id="@+id/btn_etc"
+            android:layout_width="76sp"
+            android:layout_height="40sp"
+            android:text="기타"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_category"
+            android:layout_marginTop="5sp"
+            app:layout_constraintStart_toEndOf="@id/btn_disccount"
+            android:layout_marginStart="10sp"
+            android:textColor="#61646b"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
+            android:backgroundTint="#efeff0"/>
+
+        <Button
+            android:id="@+id/btn_together"
+            android:layout_width="110sp"
+            android:layout_height="40sp"
+            android:text="같이해요"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_restaurant"
+            android:layout_marginTop="7sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="10sp"
+            android:textColor="#61646b"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
+            android:backgroundTint="#efeff0"/>
+
+        <Button
+            android:id="@+id/btn_question"
+            android:layout_width="110sp"
+            android:layout_height="40sp"
+            android:text="질문/요청"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_restaurant"
+            android:layout_marginTop="7sp"
+            app:layout_constraintStart_toEndOf="@id/btn_together"
+            android:layout_marginStart="10sp"
+            android:textColor="#61646b"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
+            android:backgroundTint="#efeff0"/>
+
+
+
+        <Button
+            android:id="@+id/btn_information"
+            android:layout_width="110sp"
+            android:layout_height="40sp"
+            android:text="공공정보"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@id/btn_restaurant"
+            android:layout_marginTop="7sp"
+            app:layout_constraintStart_toEndOf="@id/btn_question"
+            android:layout_marginStart="10sp"
+            android:textColor="#61646b"
+            android:textStyle="bold"
+            android:fontFamily="@font/worksans"
+            android:backgroundTint="#efeff0"/>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:id="@+id/tv_complete"
         android:layout_width="wrap_content"
@@ -33,27 +176,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
-        android:id="@+id/iv_upload"
+        android:id="@+id/img_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/image_upload"
-        android:layout_marginTop="205sp"
-        android:layout_marginLeft="26sp"
+        android:src="@drawable/backbutton_black"
+        android:layout_marginLeft="27sp"
+        android:layout_marginTop="49sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
     <EditText
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="제목"
+        android:textStyle="bold"
         android:background="@android:color/transparent"
-        android:layout_marginTop="314sp"
         android:layout_marginLeft="35sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/const_category"
+        android:layout_marginTop="30sp"/>
 
     <ImageView
         android:layout_width="match_parent"

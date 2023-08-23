@@ -39,21 +39,22 @@ class SetBudgetActivity : AppCompatActivity() {
         }
         binding.ivSetBudgetSave.setOnClickListener {
 
+            //var budget = binding.etSetbudget.toString()
+            //var Budget = budget.toInt()
+
+
+            var budget = 39999
 
             //retrofit통신 - Post
-            val data = PostBudget(2023,4,5000)
-            api.postBudget(2023,4,5000,data,"Bearer $authToken").enqueue(object: Callback<Void> {
+            api.postBudget(2023,6,budget,"Bearer $authToken").enqueue(object: Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>){
-                    Log.d("!!!!!!!!!!!!!!!!!!!", "response :")
-                    if (response.isSuccessful.not()){
-                        Log.e(TAG, response.toString())
-                        return
-                    }else{
-                        Log.e(TAG, "포스트 성공")
-                    }
+                    Log.d("예산설정 성공", "response :")
+
+
+
                 }
                 override fun onFailure(call: Call<Void>, t: Throwable){
-                    Log.e(TAG, "연결 실패")
+                    Log.e(TAG, "예산실패")
                     Log.e(TAG, t.toString())
                 }
             })

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFFFF"
-    tools:context=".DongnaeDetailFragment">
+    tools:context=".DongnaeDetailFragment"
+    android:layout_weight="1">
 
     <!-- 상단 이미지 뷰 -->
     <ImageView
@@ -20,16 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/layout_border_style"/>
 
-    <!-- 아이콘 이미지 뷰 -->
-    <ImageView
-        android:id="@+id/blackButtonImageView"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="372dp"
-        android:src="@drawable/backbutton_black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageViewTop" />
+
     <!-- "동네정보" 텍스트 뷰 -->
 
     <!-- "btn_menu" -->
@@ -38,25 +30,16 @@
         android:id="@+id/dongnaeInfoTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
         android:text="동네정보"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="@id/blackButtonImageView"
-        app:layout_constraintStart_toEndOf="@+id/blackButtonImageView"
-        app:layout_constraintTop_toTopOf="@id/blackButtonImageView"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12sp"/>
 
-    <ImageView
-        android:id="@+id/btnMenuImageView"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="120dp"
-        android:src="@drawable/btn_menu"
-        app:layout_constraintStart_toEndOf="@+id/dongnaeInfoTextView"
-        app:layout_constraintTop_toTopOf="@+id/dongnaeInfoTextView"
-        app:layout_constraintBottom_toBottomOf="@+id/dongnaeInfoTextView" />
+
 
     <!-- dooly22 텍스트 뷰 -->
     <ImageView
@@ -200,7 +183,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/item_accountshare"
         app:layout_constraintTop_toBottomOf="@id/bottom"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="150dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -209,7 +192,7 @@
         android:id="@+id/commentIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/detailicon"
         android:layout_marginStart="24dp"
         app:layout_constraintStart_toStartOf="@id/lineImageView"
@@ -218,7 +201,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="9dp"
         android:src="@drawable/detail_comment"
         app:layout_constraintStart_toEndOf="@id/commentIcon"
@@ -233,6 +216,6 @@
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/commentIcon"
         app:layout_constraintTop_toBottomOf="@id/lineImageView"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="14dp"
         android:layout_marginStart="24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
