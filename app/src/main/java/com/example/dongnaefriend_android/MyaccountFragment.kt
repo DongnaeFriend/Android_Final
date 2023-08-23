@@ -1,8 +1,12 @@
 package com.example.dongnaefriend_android
 
 import android.R
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.core.app.NotificationCompat.getColor
 import com.example.dongnaefriend_android.Retrofit2.AccountAllResponse
 import com.example.dongnaefriend_android.Retrofit2.BudgetResponse
 import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
@@ -52,6 +57,9 @@ class MyaccountFragment : Fragment() {
     var percentage12 = 0
     var percentage13 = 0
     var percentage14 = 0
+    val decimal = DecimalFormat("#,###")
+
+
 
 
 
@@ -149,6 +157,7 @@ class MyaccountFragment : Fragment() {
                             Log.d("AccountAll실패", t.message!!)
                         }
                         // 전송 성공
+                        @SuppressLint("ResourceAsColor")
                         override fun onResponse(call: Call<AccountAllResponse>, response: Response<AccountAllResponse>) {
 
 
@@ -161,12 +170,12 @@ class MyaccountFragment : Fragment() {
 
                             //binding.textviewPaymentamount.text = "${decimal.format(response.body()?.expenditure.toString())}원"
                             //binding.tvIncomeAmount.text = "${decimal.format(response.body()?.income.toString())}원"
-                            binding.textviewPaymentamount.text = "${response.body()?.expenditure.toString()}원"
-                            binding.tvIncomeAmount.text = "${response.body()?.income.toString()}원"
+                            binding.textviewPaymentamount.text = "${decimal.format(response.body()?.expenditure)}원"
+                            binding.tvIncomeAmount.text = "${decimal.format(response.body()?.income)}원"
 
 
                             if (response.body()?.expenditure == null){
-                                binding.tvLeftbudget.text = "이번달 예산은 ${setBudget}원이고, \n 지출 내역은 없습니다!"
+                                binding.tvLeftbudget.text = "이번달 예산은 ${decimal.format(setBudget)}원이고, \n 지출 내역은 없습니다!"
                                 check = false
 
                             }
@@ -177,8 +186,9 @@ class MyaccountFragment : Fragment() {
                             if(check == true) {
                                 if (setBudget < expenditure) {
                                     myAccountText2 =
-                                        "이번 달 예산을 ${abs(setBudget - expenditure)}원 만큼 초과했어요.\n절약이 절실해요"
+                                        "이번 달 예산을 ${decimal.format(abs(setBudget - expenditure))}원 만큼 초과했어요.\n절약이 절실해요"
                                     binding.tvLeftbudget.text = myAccountText2
+
                                 } else {
 
                                     //현재 날짜 불러오기
@@ -192,7 +202,7 @@ class MyaccountFragment : Fragment() {
                                     } else {
                                         myAccountText2 = "조금만 더 절약해봐요!"
                                     }
-                                    myAccountText1 = "이번달 남은 예산은 ${setBudget - expenditure}원이에요"
+                                    myAccountText1 = "이번달 남은 예산은 ${decimal.format(setBudget - expenditure)}원이에요"
                                     binding.tvLeftbudget.text = "${myAccountText1} \n ${myAccountText2}"
                                 }
                             }
@@ -373,10 +383,12 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage0 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentFood.text = "${percentage0.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountFood.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountFood.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountFood.text = "${Price}원"}
                             }
-/*
+
                             if(dataDummy.contains("transactionCategory=카페/간식")){
                                 binding.LinearAccountLower2.visibility = View.VISIBLE
 
@@ -386,8 +398,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage1 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentSnack.text = "${percentage1.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountSnack.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountSnack.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountSnack.text = "${Price}원"}
                             }
 
                             if(dataDummy.contains("transactionCategory=편의점/마트")){
@@ -399,8 +413,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage2 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentMart.text = "${percentage2.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountMart.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountMart.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountMart.text = "${Price}원"}
                             }
 
                             if(dataDummy.contains("transactionCategory=술/유흥")){
@@ -412,10 +428,11 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage3 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentAlchol.text = "${percentage3.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountAlchol.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountAlchol.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountAlchol.text = "${Price}원"}
                             }
-
                             if(dataDummy.contains("transactionCategory=쇼핑")){
                                 binding.LinearAccountLower5.visibility = View.VISIBLE
 
@@ -425,8 +442,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage4 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentShopping.text = "${percentage4.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountShopping.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountShopping.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountShopping.text = "${Price}원"}
                             }
 
                             if(dataDummy.contains("transactionCategory=취미/여가")){
@@ -438,8 +457,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage5 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentHobby.text = "${percentage5.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountHobby.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountHobby.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountHobby.text = "${Price}원"}
                             }
 
                             if(dataDummy.contains("transactionCategory=건강")){
@@ -451,10 +472,11 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage6 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentHealth.text = "${percentage6.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountHealth.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountHealth.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountHealth.text = "${Price}원"}
                             }
-
                             if(dataDummy.contains("transactionCategory=주거/통신")){
                                 binding.LinearAccountLower8.visibility = View.VISIBLE
 
@@ -464,8 +486,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage7 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentLiving.text = "${percentage7.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountLiving.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountLiving.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountLiving.text = "${Price}원"}
                             }
 
                             if(dataDummy.contains("transactionCategory=보험/금융")){
@@ -477,8 +501,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage8 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentFund.text = "${percentage8.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountFund.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountFund.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountFund.text = "${Price}원"}
                             }
 
                             if(dataDummy.contains("transactionCategory=미용")){
@@ -490,10 +516,11 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage9 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentBeauty.text = "${percentage9.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountBeauty.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountBeauty.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountBeauty.text = "${Price}원"}
                             }
-
                             if(dataDummy.contains("transactionCategory=교통비")){
                                 binding.LinearAccountLower11.visibility = View.VISIBLE
 
@@ -503,10 +530,11 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage10 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentTransport.text = "${percentage10.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountTransport.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountTransport.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountTransport.text = "${Price}원"}
                             }
-
                             if(dataDummy.contains("transactionCategory=여행/숙박")){
                                 binding.LinearAccountLower12.visibility = View.VISIBLE
 
@@ -516,8 +544,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage11 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentTrip.text = "${percentage11.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountTrip.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountTrip.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountTrip.text = "${Price}원"}
                             }
 
                             if(dataDummy.contains("transactionCategory=교육")){
@@ -529,8 +559,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage12 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentEducation.text = "${percentage12.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountEducation.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountEducation.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountEducation.text = "${Price}원"}
                             }
 
                             if(dataDummy.contains("transactionCategory=저축/투자")){
@@ -542,8 +574,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage13 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentBank.text = "${percentage13.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountBank.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountBank.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountBank.text = "${Price}원"}
                             }
 
                             if(dataDummy.contains("transactionCategory=기타(지출)")){
@@ -555,8 +589,10 @@ class MyaccountFragment : Fragment() {
                                 var Price = Split[1].toInt()
                                 percentage14 = (Price*100/response.body()?.expenditure!!)
                                 binding.tvPercentEtc.text = "${percentage14.toString()}%"
-                                val decimal = DecimalFormat("#,###")
-                                binding.tvAmountEtc.text = "${decimal.format(Price)}원"
+                                if(Price>=1000) {
+                                    binding.tvAmountEtc.text = "${decimal.format(Price)}원"
+                                }
+                                else{binding.tvAmountEtc.text = "${Price}원"}
                             }
 
                             //원형 차트 라이브러리 https://youngest-programming.tistory.com/273 참고
@@ -564,7 +600,7 @@ class MyaccountFragment : Fragment() {
 
 
 
- */
+
 
 
 

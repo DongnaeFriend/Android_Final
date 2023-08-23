@@ -22,8 +22,8 @@ import retrofit2.Retrofit
 class DongnaeRestaurantFragment : Fragment() {
     private lateinit var binding: FragmentDongnaeshareBinding
     private lateinit var adapter: DongnaeshareAdapter
-    private val dongnaeshareData = mutableListOf<Post>()
-    var size = 0
+    private var dongnaeshareData = mutableListOf<Post>()
+
 
 
     private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
@@ -39,9 +39,10 @@ class DongnaeRestaurantFragment : Fragment() {
 
 
 
-        Runnable {
-            api.getPeed("", 0, "createdAt", "Bearer $authToken")
+
+            api.getPeed("", 0,0, "createdAt",0,"Bearer $authToken")
                 .enqueue(object : Callback<PeedResponse> {
+
                     // 전송 실패
                     override fun onFailure(call: Call<PeedResponse>, t: Throwable) {
                         Log.d("피드 get 실패", t.message!!)
@@ -52,30 +53,65 @@ class DongnaeRestaurantFragment : Fragment() {
                         call: Call<PeedResponse>,
                         response: Response<PeedResponse>
                     ) {
+
                         Log.d("피드 get", "response : ${response.body()?.contents}") // 정상출력
+
+                        var size = 0
+                        var peedId = 0
+                        var town = ""
+                        var title = ""
+                        var content = ""
+                        var createdAt = ""
+                        var view = ""
+                        var commentCount = ""
+                        var likes = ""
 
                         var Response = response.body()?.contents!!
                         size = Response.size
 
-                        /*
+
                         if(size>=1) {
                             var peed0 = Response[0].toString()
                             var split = peed0.split("Contents(",", ",")")
-                            var id = split[0].toInt()
-                            var town = split[1]
-                            var category = split[2]
-                            var title = split[3]
-                            var content= split[4]
-                            var createdAt = split[6]
-                            var view = split[7]
-                            var commentCount = split[8]
-                            var likes = split[9]
+                            Log.d("split!!!!!!",split.toString())
+
+
+
+                             peedId = split[1].split("=")[1].toInt()
+
+                             town = ""
+                            if(split[2]==null) {
+                                town = "동네를 입력해주세요"
+                            }
+                            else{
+                                town = split[2].split("=")[1]
+                            }
+
+                             title = ""
+                            if(split[4] == null){
+                                title = "제목을 입력해주세요"
+                            }
+                            else{
+                                title = split[4].split("=")[1]
+                            }
+
+                             content= ""
+                            if(split[5] == null){
+                                content = "내용을 입력해주세요"
+                            }
+                            else{
+                                content= split[5].split("=")[1]
+                            }
+                             createdAt = split[7].split("=")[1]
+                             view = split[8].split("=")[1]
+                             commentCount = split[9].split("=")[1]
+                             likes = split[10].split("=")[1]
+
 
                             dongnaeshareData.addAll(
                                 listOf<Post>(
-
                                     Post(
-                                        id,
+                                        peedId,
                                         R.drawable.image_myaccount,
                                         title, commentCount, likes, content,
                                         town, createdAt, view
@@ -83,26 +119,52 @@ class DongnaeRestaurantFragment : Fragment() {
 
                                 )
                             )
+
+
                         }
 
                         if(size>=2) {
                             var peed1 = Response[1].toString()
                             var split = peed1.split("Contents(",", ",")")
-                            var id = split[0].toInt()
-                            var town = split[1]
-                            var category = split[2]
-                            var title = split[3]
-                            var content= split[4]
-                            var createdAt = split[6]
-                            var view = split[7]
-                            var commentCount = split[8]
-                            var likes = split[9]
+                            Log.d("split!!!!!!",split.toString())
+
+
+
+                            peedId = split[1].split("=")[1].toInt()
+
+                            town = ""
+                            if(split[2]==null) {
+                                town = "동네를 입력해주세요"
+                            }
+                            else{
+                                town = split[2].split("=")[1]
+                            }
+
+                            title = ""
+                            if(split[4] == null){
+                                title = "제목을 입력해주세요"
+                            }
+                            else{
+                                title = split[4].split("=")[1]
+                            }
+
+                            content= ""
+                            if(split[5] == null){
+                                content = "내용을 입력해주세요"
+                            }
+                            else{
+                                content= split[5].split("=")[1]
+                            }
+                            createdAt = split[7].split("=")[1]
+                            view = split[8].split("=")[1]
+                            commentCount = split[9].split("=")[1]
+                            likes = split[10].split("=")[1]
+
 
                             dongnaeshareData.addAll(
                                 listOf<Post>(
-
                                     Post(
-                                        id,
+                                        peedId,
                                         R.drawable.image_myaccount,
                                         title, commentCount, likes, content,
                                         town, createdAt, view
@@ -110,26 +172,52 @@ class DongnaeRestaurantFragment : Fragment() {
 
                                 )
                             )
+
+
                         }
 
                         if(size>=3) {
                             var peed2 = Response[2].toString()
                             var split = peed2.split("Contents(",", ",")")
-                            var id = split[0].toInt()
-                            var town = split[1]
-                            var category = split[2]
-                            var title = split[3]
-                            var content= split[4]
-                            var createdAt = split[6]
-                            var view = split[7]
-                            var commentCount = split[8]
-                            var likes = split[9]
+                            Log.d("split!!!!!!",split.toString())
+
+
+
+                            peedId = split[1].split("=")[1].toInt()
+
+                            town = ""
+                            if(split[2]==null) {
+                                town = "동네를 입력해주세요"
+                            }
+                            else{
+                                town = split[2].split("=")[1]
+                            }
+
+                            title = ""
+                            if(split[4] == null){
+                                title = "제목을 입력해주세요"
+                            }
+                            else{
+                                title = split[4].split("=")[1]
+                            }
+
+                            content= ""
+                            if(split[5] == null){
+                                content = "내용을 입력해주세요"
+                            }
+                            else{
+                                content= split[5].split("=")[1]
+                            }
+                            createdAt = split[7].split("=")[1]
+                            view = split[8].split("=")[1]
+                            commentCount = split[9].split("=")[1]
+                            likes = split[10].split("=")[1]
+
 
                             dongnaeshareData.addAll(
                                 listOf<Post>(
-
                                     Post(
-                                        id,
+                                        peedId,
                                         R.drawable.image_myaccount,
                                         title, commentCount, likes, content,
                                         town, createdAt, view
@@ -137,9 +225,118 @@ class DongnaeRestaurantFragment : Fragment() {
 
                                 )
                             )
+
+
                         }
 
-                         */
+                        if(size>=4) {
+                            var peed3 = Response[3].toString()
+                            var split = peed3.split("Contents(",", ",")")
+                            Log.d("split!!!!!!",split.toString())
+
+
+
+                            peedId = split[1].split("=")[1].toInt()
+
+                            town = ""
+                            if(split[2]==null) {
+                                town = "동네를 입력해주세요"
+                            }
+                            else{
+                                town = split[2].split("=")[1]
+                            }
+
+                            title = ""
+                            if(split[4] == null){
+                                title = "제목을 입력해주세요"
+                            }
+                            else{
+                                title = split[4].split("=")[1]
+                            }
+
+                            content= ""
+                            if(split[5] == null){
+                                content = "내용을 입력해주세요"
+                            }
+                            else{
+                                content= split[5].split("=")[1]
+                            }
+                            createdAt = split[7].split("=")[1]
+                            view = split[8].split("=")[1]
+                            commentCount = split[9].split("=")[1]
+                            likes = split[10].split("=")[1]
+
+
+                            dongnaeshareData.addAll(
+                                listOf<Post>(
+                                    Post(
+                                        peedId,
+                                        R.drawable.image_myaccount,
+                                        title, commentCount, likes, content,
+                                        town, createdAt, view
+                                    )
+
+                                )
+                            )
+
+
+                        }
+
+                        if(size>=5) {
+                            var peed4 = Response[4].toString()
+                            var split = peed4.split("Contents(",", ",")")
+                            Log.d("split!!!!!!",split.toString())
+
+
+
+                            peedId = split[1].split("=")[1].toInt()
+
+                            town = ""
+                            if(split[2]==null) {
+                                town = "동네를 입력해주세요"
+                            }
+                            else{
+                                town = split[2].split("=")[1]
+                            }
+
+                            title = ""
+                            if(split[4] == null){
+                                title = "제목을 입력해주세요"
+                            }
+                            else{
+                                title = split[4].split("=")[1]
+                            }
+
+                            content= ""
+                            if(split[5] == null){
+                                content = "내용을 입력해주세요"
+                            }
+                            else{
+                                content= split[5].split("=")[1]
+                            }
+                            createdAt = split[7].split("=")[1]
+                            view = split[8].split("=")[1]
+                            commentCount = split[9].split("=")[1]
+                            likes = split[10].split("=")[1]
+
+
+                            dongnaeshareData.addAll(
+                                listOf<Post>(
+                                    Post(
+                                        peedId,
+                                        R.drawable.image_myaccount,
+                                        title, commentCount, likes, content,
+                                        town, createdAt, view
+                                    )
+
+                                )
+                            )
+
+
+                        }
+
+                        initRestaurantList()
+                        initRestaurantRecyclerView()
 
 
 
@@ -151,7 +348,9 @@ class DongnaeRestaurantFragment : Fragment() {
                     }
 
                 })
-        }.run()
+
+
+
     }
 
     override fun onCreateView(
@@ -161,8 +360,7 @@ class DongnaeRestaurantFragment : Fragment() {
     ): View? {
         binding = FragmentDongnaeshareBinding.inflate(inflater, container, false)
 
-        initRestaurantList()
-        initRestaurantRecyclerView()
+
 
 
 

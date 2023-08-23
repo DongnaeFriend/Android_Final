@@ -1,5 +1,6 @@
 package com.example.dongnaefriend_android.Retrofit2
 
+import android.text.BoringLayout
 import androidx.browser.browseractions.BrowserActionsIntent.BrowserActionsItemId
 import com.google.gson.annotations.SerializedName
 
@@ -97,6 +98,26 @@ data class PeedResponse(
         @SerializedName("likes") val likes : Int,
     )
 }
+
+data class PeedDetailResponse(
+    @SerializedName("title") val title : String,
+    @SerializedName("content") val content : String,
+    @SerializedName("place") val place : String,
+    @SerializedName("placeLocation") val placeLocation : String,
+    @SerializedName("createdAt") val createdAt : String,
+    @SerializedName("view") val view : Int,
+    @SerializedName("townCertificateCnt") val townCertificateCnt : Int,
+    @SerializedName("isWriter") val isWriter : Boolean,
+    @SerializedName("likeOrNot") val likeOrNot : Boolean,
+    @SerializedName("scarpOrNot") val scarpOrNot : BoringLayout,
+    @SerializedName("profileImage") val profileImage : String,
+    @SerializedName("nickname") val nickname : String,
+    @SerializedName("category") val category : Int,
+
+
+
+
+    )
 
 
 
