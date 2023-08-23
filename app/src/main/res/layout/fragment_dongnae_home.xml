@@ -73,37 +73,48 @@
             android:textSize="15dp"
             android:textStyle="bold"/>
 
+
         <!-- 글 목록 1 -->
         <LinearLayout
-            android:id="@+id/restaurant1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+                android:layout_marginStart="15dp"
+               android:orientation="vertical">
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="기대치에 못미쳤던... 식당 후기"
+                android:text="남다른 초밥"
+                android:layout_marginTop="5dp"
                 android:textSize="10sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="text"
-                android:textSize="8sp"
                 android:textColor="#61646B"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="전농동 23.08.14 조회 484 댓글 96"
+                android:layout_marginTop="8dp"
+                android:text="전농동 4시간 전 조회 558 댓글 16"
                 android:textSize="8sp"
                 android:textColor="#61646B"/>
+        </LinearLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="200dp"
+                android:src="@drawable/restaurant_5" />
 
         </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/restaurant2"
@@ -117,35 +128,48 @@
             android:layout_marginTop="10dp"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:text="기대치에 못미쳤던... 카페 후기"
-            android:textSize="10sp"
-            android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:text="text"
-            android:textSize="8sp"
-            android:textColor="#61646B"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:text="전농동 23.08.14 조회 484 댓글 48"
-            android:textSize="8sp"
-            android:textColor="#61646B"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:text="장안사거리 근처 가족식사 장소 추천드립니다"
+                        android:textColor="#61646B"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="장안동 3일 전 조회 464 댓글 5"
+                        android:textColor="#61646B"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="130dp"
+                    android:src="@drawable/restaurant_6" />
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
-    <!-- ... 기존의 코드 ... -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -160,77 +184,110 @@
         android:layout_marginTop="286dp"
         android:orientation="vertical">
 
-        <!-- 맛집 제목 -->
+        <!-- 시설 제목 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="7dp"
             android:text="시설"
             android:textSize="15dp"
             android:textStyle="bold"/>
 
+
         <!-- 글 목록 1 -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="기대치에 못미쳤던... 식당 후기"
-                android:textSize="10sp"
-                android:textStyle="bold"/>
+                android:layout_weight="1"
+                android:layout_marginStart="15dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="text"
-                android:textSize="8sp"
-                android:textColor="#61646B"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="전농동 23.08.14 조회 484 댓글 96"
-                android:textSize="8sp"
-                android:textColor="#61646B"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="장한평역 스포애니 주말에 어떰?"
+                    android:layout_marginTop="5dp"
+                    android:textSize="10sp"
+                    android:textColor="#61646B"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="휘경동 1일 전 조회 214 댓글 4"
+                    android:textSize="8sp"
+                    android:textColor="#61646B"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="185dp"
+                android:src="@drawable/facility_1" />
 
         </LinearLayout>
 
-        <ImageView
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/item_accountshare"
-            android:layout_marginTop="10dp"/>
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_accountshare"
+                android:layout_marginTop="10dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:text="기대치에 못미쳤던... 카페 후기"
-            android:textSize="10sp"
-            android:textStyle="bold"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:text="text"
-            android:textSize="8sp"
-            android:textColor="#61646B"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:text="전농동 23.08.14 조회 484 댓글 48"
-            android:textSize="8sp"
-            android:textColor="#61646B"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:text="고양이 치과전문병원"
+                        android:textColor="#61646B"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="전농동 8일 전 조회 144 댓글 18"
+                        android:textColor="#61646B"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="210dp"
+                    android:src="@drawable/facility_2" />
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
     <ImageView
         android:layout_width="match_parent"
@@ -246,77 +303,110 @@
         android:layout_marginTop="438dp"
         android:orientation="vertical">
 
-        <!-- 맛집 제목 -->
+        <!-- 공공정보 제목 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="5dp"
-            android:text="할인"
+            android:layout_marginTop="7dp"
+            android:text="정보공유"
             android:textSize="15dp"
             android:textStyle="bold"/>
 
+
         <!-- 글 목록 1 -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="기대치에 못미쳤던... 식당 후기"
-                android:textSize="10sp"
-                android:textStyle="bold"/>
+                android:layout_weight="1"
+                android:layout_marginStart="15dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="text"
-                android:textSize="8sp"
-                android:textColor="#61646B"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="전농동 23.08.14 조회 484 댓글 96"
-                android:textSize="8sp"
-                android:textColor="#61646B"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="동대문구 1인가구지원사업 안내"
+                    android:layout_marginTop="5dp"
+                    android:textSize="10sp"
+                    android:textColor="#61646B"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="전농동 4일 전 조회 680 댓글 14"
+                    android:textSize="8sp"
+                    android:textColor="#61646B"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="185dp"
+                android:src="@drawable/info_1" />
 
         </LinearLayout>
 
-        <ImageView
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/item_accountshare"
-            android:layout_marginTop="10dp"/>
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_accountshare"
+                android:layout_marginTop="10dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="10dp"
-            android:text="기대치에 못미쳤던... 카페 후기"
-            android:textSize="10sp"
-            android:textStyle="bold"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:text="text"
-            android:textSize="8sp"
-            android:textColor="#61646B"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:text="전농동 23.08.14 조회 484 댓글 48"
-            android:textSize="8sp"
-            android:textColor="#61646B"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:text="1인가구 물품대여 서비스"
+                        android:textColor="#61646B"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="전농동 8일 전 조회 144 댓글 18"
+                        android:textColor="#61646B"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="210dp"
+                    android:src="@drawable/info_2" />
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
     <ImageView
         android:layout_width="match_parent"
@@ -424,7 +514,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="5dp"
-                android:text="질문/요청"
+                android:text="소통해요"
                 android:textSize="15dp"
                 android:textStyle="bold"/>
 
@@ -504,13 +594,13 @@
             android:layout_marginTop="921dp"
             android:orientation="vertical">
 
-            <!-- 맛집 제목 -->
+            <!-- 기타 제목 -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="5dp"
-                android:text="공공정보"
+                android:text="기타"
                 android:textSize="15dp"
                 android:textStyle="bold"/>
 

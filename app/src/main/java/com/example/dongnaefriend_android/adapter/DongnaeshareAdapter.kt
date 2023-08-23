@@ -40,6 +40,7 @@ class DongnaeshareAdapter: RecyclerView.Adapter<DongnaeshareAdapter.ViewHolder>(
             binding.ivItemDongnaeshareCover.setImageResource(dongnaeshare.cover)
             binding.tvItemDongnaeshareTitle.text = dongnaeshare.title
             binding.tvItemDongnaeshareMention.text = dongnaeshare.mention
+            binding.tvItemDongnaeshareLoc.text=dongnaeshare.loc
             binding.tvItemDongnaeshareLike.text = dongnaeshare.like
             binding.tvItemDongnaeshareText.text = dongnaeshare.text
             binding.tvItemDongnaeshareTime.text = dongnaeshare.time
