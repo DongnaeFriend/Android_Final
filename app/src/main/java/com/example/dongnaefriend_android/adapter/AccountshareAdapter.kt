@@ -1,5 +1,6 @@
 package com.example.dongnaefriend_android.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,7 @@ import model.AccountsharePost
 class AccountshareAdapter: RecyclerView.Adapter<AccountshareAdapter.ViewHolder>() {
 
     var dataList = mutableListOf<AccountsharePost>()
-    var onItemClick: ((AccountsharePost) -> Unit)? = null
+    var onItemClickListener: OnAccountshareItemClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemAccountshareBinding.inflate(LayoutInflater.from(parent.context),parent, false)
@@ -21,21 +22,21 @@ class AccountshareAdapter: RecyclerView.Adapter<AccountshareAdapter.ViewHolder>(
         val accountshare = dataList[position]
         holder.onBind(accountshare)
     }
-
+    interface OnAccountshareItemClickListener {
+        fun onItemClicked(post: AccountsharePost)
+    }
     override fun getItemCount(): Int = dataList.size
 
     inner class ViewHolder(private val binding: ItemAccountshareBinding) : RecyclerView.ViewHolder(binding.root){
-
         init {
             itemView.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
-                    val item = dataList[position]
-                    onItemClick?.invoke(item)
+                    Log.d("Adapter", "Item clicked at position: $position")
+                    onItemClickListener?.onItemClicked(dataList[position])
                 }
             }
         }
-
         fun onBind(accountshare: AccountsharePost){
             binding.ivItemAccountshareCover.setImageResource(accountshare.cover)
             binding.tvItemAccountshareTitle.text = accountshare.title

@@ -9,8 +9,10 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dongnaefriend_android.adapter.AccountshareAdapter
+import com.example.dongnaefriend_android.adapter.DongnaeshareAdapter
 import com.example.dongnaefriend_android.databinding.FragmentAccountshareBinding
 import model.AccountsharePost
+import model.Post
 
 class AccountshareFragment : Fragment() {
     lateinit var binding: FragmentAccountshareBinding
@@ -79,7 +81,24 @@ class AccountshareFragment : Fragment() {
         accountshareAdapter = AccountshareAdapter()
         accountshareAdapter.dataList = accountshareData
         binding.rvAccountshare.adapter = accountshareAdapter
+        accountshareAdapter.onItemClickListener = object :
+            AccountshareAdapter.OnAccountshareItemClickListener {
+            override fun onItemClicked(post: AccountsharePost) {
+                // 여기서 AccountshareDetailFragment로 이동하도록 처리
+                val fragment = AccountshareDetailFragment().apply {
+                    arguments = Bundle().apply {
+                        // 여기서 필요한 정보를 전달
+                        putSerializable("post_detail", post)
+                    }
+                }
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.container_account_detail, fragment)
+                    .addToBackStack(null) // 이전 Fragment로 돌아오기 위해
+                    .commit()
+            }
+        }
     }
+
 
     private fun initAccountshareList(postType: String) {
         Log.d("post", "postType:"+postType)
