@@ -48,6 +48,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="전농동"
+                android:fontFamily="@font/worksans"
+                android:textStyle="bold"
                 android:textColor="#e6e6fa"
                 android:textSize="16sp"
                 android:layout_toEndOf="@id/image_location"
