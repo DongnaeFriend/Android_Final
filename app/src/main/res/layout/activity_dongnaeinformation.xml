@@ -148,6 +148,16 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/container_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nav_bottom"
+        android:backgroundTint="@color/black"/>
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_bottom"
         android:layout_width="0dp"
@@ -159,12 +169,7 @@
         android:background="@color/white"
         app:itemTextColor="@color/black"
         app:labelVisibilityMode="labeled"/>
-    <FrameLayout
-        android:id="@+id/container_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/nav_bottom" />
+
 
 
     <ImageButton

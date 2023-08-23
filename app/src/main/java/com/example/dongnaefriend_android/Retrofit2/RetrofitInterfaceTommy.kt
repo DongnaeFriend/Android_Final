@@ -6,6 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface RetrofitInterfaceTommy {
@@ -84,9 +85,17 @@ interface RetrofitInterfaceTommy {
     fun getPeed(
         @Query("keyword") keyoword : String,
         @Query("category") category : Int,
+        @Query("size") size : Int,
         @Query("sortBy") sortBy : String,
+        @Query("page") page : Int,
         @Header("Authorization") authToken: String
     ):Call<PeedResponse>
+
+    @GET("town-information/{townInformationId}")
+    fun getPeedDetail(
+        @Path("townInformationId") townInformationId : Int,
+        @Header("Authorization") authToken: String
+    ):Call<PeedDetailResponse>
 
 
 }

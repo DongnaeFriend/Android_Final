@@ -44,7 +44,6 @@ class DongnaeWriteFragment : Fragment() {
             binding.btnDisccount.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnTogether.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnQuestion.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnInformation.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnEtc.setBackgroundColor(Color.parseColor("#efeff0"))
 
             category = 0
@@ -56,7 +55,6 @@ class DongnaeWriteFragment : Fragment() {
             binding.btnDisccount.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnTogether.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnQuestion.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnInformation.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnEtc.setBackgroundColor(Color.parseColor("#efeff0"))
 
             category = 1
@@ -68,7 +66,6 @@ class DongnaeWriteFragment : Fragment() {
             binding.btnDisccount.setBackgroundColor(Color.parseColor("#ffc536"))
             binding.btnTogether.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnQuestion.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnInformation.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnEtc.setBackgroundColor(Color.parseColor("#efeff0"))
 
             category = 2
@@ -80,7 +77,6 @@ class DongnaeWriteFragment : Fragment() {
             binding.btnDisccount.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnTogether.setBackgroundColor(Color.parseColor("#ffc536"))
             binding.btnQuestion.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnInformation.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnEtc.setBackgroundColor(Color.parseColor("#efeff0"))
 
             category = 3
@@ -92,23 +88,11 @@ class DongnaeWriteFragment : Fragment() {
             binding.btnDisccount.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnTogether.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnQuestion.setBackgroundColor(Color.parseColor("#ffc536"))
-            binding.btnInformation.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnEtc.setBackgroundColor(Color.parseColor("#efeff0"))
 
             category = 4
         }
 
-        binding.btnInformation.setOnClickListener{
-            binding.btnRestaurant.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnFacility.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnDisccount.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnTogether.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnQuestion.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnInformation.setBackgroundColor(Color.parseColor("#ffc536"))
-            binding.btnEtc.setBackgroundColor(Color.parseColor("#efeff0"))
-
-            category = 5
-        }
 
         binding.btnEtc.setOnClickListener{
             binding.btnRestaurant.setBackgroundColor(Color.parseColor("#efeff0"))
@@ -116,10 +100,9 @@ class DongnaeWriteFragment : Fragment() {
             binding.btnDisccount.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnTogether.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnQuestion.setBackgroundColor(Color.parseColor("#efeff0"))
-            binding.btnInformation.setBackgroundColor(Color.parseColor("#efeff0"))
             binding.btnEtc.setBackgroundColor(Color.parseColor("#ffc536"))
 
-            category = 6
+            category = 5
         }
 
         binding.imgBack.setOnClickListener{
@@ -131,10 +114,10 @@ class DongnaeWriteFragment : Fragment() {
             val intent = Intent(getActivity(), DongnaeInformationActivity::class.java)
             startActivity(intent)
 
-            var title = ""
-            var content = ""
+            var title = binding.tvTitle.text.toString()
+            var content = binding.tvText.text.toString()
 
-            val data = PostPeed(category,title,content,"","")
+            val data = PostPeed(category,title,content,"올댓마인드","문래동")
             api.postPeed(data,"Bearer $authToken").enqueue(object: Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>){
                     Log.d("글쓰기 포스트", "response :")

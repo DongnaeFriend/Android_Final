@@ -11,12 +11,28 @@ import com.example.dongnaefriend_android.AccountbookActivity
 import com.example.dongnaefriend_android.DongnaeInformationActivity
 import com.example.dongnaefriend_android.DongnaeRestaurantFragment
 import com.example.dongnaefriend_android.R
+import com.example.dongnaefriend_android.Retrofit2.BudgetResponse
+import com.example.dongnaefriend_android.Retrofit2.PeedDetailResponse
+import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
+import com.example.dongnaefriend_android.Retrofit2.RetrofitInterfaceTommy
 import com.example.dongnaefriend_android.databinding.FragmentDongnaeDetailBinding
 import model.Post
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 class DongnaeDetailFragment : Fragment() {
     private var post: Post? = null
     private lateinit var binding : FragmentDongnaeDetailBinding
+
+
+    private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
+    private val api: RetrofitInterfaceTommy =
+        retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
+    private val authToken =
+        "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,9 +49,51 @@ class DongnaeDetailFragment : Fragment() {
         binding = FragmentDongnaeDetailBinding.inflate(layoutInflater)
 
 
+
+
         var postArray = post.toString().split("Post(",", ",")")
         var sequence = postArray[1]
+        var Sequence = postArray[1].split("=")[1]
 
+
+
+        api.getPeedDetail(Sequence.toInt(),"Bearer $authToken").enqueue(object : Callback<PeedDetailResponse> {
+            // 전송 실패
+            override fun onFailure(call: Call<PeedDetailResponse>, t: Throwable) {
+                Log.d("게시물 상세 실패", t.message!!)
+            }
+            // 전송 성공
+            override fun onResponse(call: Call<PeedDetailResponse>, response: Response<PeedDetailResponse>) {
+                Log.d("게시물 상세 성공", "response : ${response.body()?.title}") // 정상출력
+
+                if(Sequence.toInt()<100) {
+
+                    binding.reviewTextView.text = response.body()?.title
+                    binding.reviewContentTextView.text = response.body()?.content
+                    binding.infoTextView.text =
+                        "${response.body()?.createdAt}분전 | 조회 ${response.body()?.view} | 공감 0 ${response.body()?.placeLocation}"
+                    binding.locationTextView.text = response.body()?.placeLocation
+                }
+
+
+
+                // 전송은 성공 but 서버 4xx 에러
+                Log.d("태그: 에러바디", "response : ${response.errorBody()}")
+                Log.d("태그: 메시지", "response : ${response.message()}")
+                Log.d("태그: 코드", "response : ${response.code()}")
+            }
+
+        })
+
+        if (sequence == "sequence=1000"){
+            binding.reviewTextView.text = "구 바우하우스 주변 24시 식당"
+            binding.reviewContentTextView.text = "알바 퇴근이 늦은데 집가서 요리해먹기 너무 귀찮네요.. \n" +
+                    "구 바우하우스 근처에 24시 식당 괜찮은 곳 추천해주실 수 있나요?국밥은 너무 질려서 ㅠㅠ 기사식당 같은 곳도 괜찮아용!!"
+            binding.infoTextView.text = "4분전 | 조회 22 | 공감 장안동"
+            binding.detailImageView.setImageResource(R.drawable.restaurant_1)
+            binding.locationTextView.text = "장안동"
+
+        }
 
         if (sequence == "sequence=110"){
             binding.reviewTextView.text = "구 바우하우스 주변 24시 식당"
@@ -44,6 +102,7 @@ class DongnaeDetailFragment : Fragment() {
             binding.infoTextView.text = "4분전 | 조회 22 | 댓글 0 | 공감 0"
             binding.locationTextView.text="장안동"
             binding.detailImageView.setImageResource(R.drawable.restaurant_1)
+            binding.locationTextView.text = "장안동"
 
         }
         if (sequence == "sequence=111"){
@@ -88,6 +147,7 @@ class DongnaeDetailFragment : Fragment() {
             binding.detailImageView.setImageResource(R.drawable.restaurant_6)
 
         }
+
         // Inflate the layout for this fragment
         return binding.root
     }

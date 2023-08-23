@@ -4,22 +4,39 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.os.Handler
 import com.example.dongnaefriend_android.Retrofit2.RetrofitClient
 import com.example.dongnaefriend_android.Retrofit2.RetrofitInterfaceTommy
 import com.example.dongnaefriend_android.databinding.ActivityMainBinding
 import retrofit2.Retrofit
+import kotlin.concurrent.timer
 
 private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
 private val api: RetrofitInterfaceTommy = retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
 
 class MainActivity : AppCompatActivity() {
     private lateinit var Binding: ActivityMainBinding
+    var time = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Binding = ActivityMainBinding.inflate(layoutInflater)
+
+
+        val handler = Handler()
+        handler.postDelayed({
+            val intent = Intent(applicationContext, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 3000)
+
+
+
+
         setContentView(Binding.root)
+    }
 
-
+/*
         Binding.ivKakaologin.setOnClickListener{
             var intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=496d0f95e625e90a64a2ffdaaba58120&redirect_uri=https://dongnae.shop/callback"))
             startActivity(intent)
@@ -35,6 +52,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+ */
 
 
 
@@ -136,5 +155,5 @@ class MainActivity : AppCompatActivity() {
 
 
          */
-    }
+
 }

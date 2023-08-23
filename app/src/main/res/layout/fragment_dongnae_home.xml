@@ -76,6 +76,7 @@
 
         <!-- 글 목록 1 -->
         <LinearLayout
+            android:id="@+id/restaurant1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -197,6 +198,7 @@
 
         <!-- 글 목록 1 -->
         <LinearLayout
+            android:id="@+id/facility1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -238,6 +240,7 @@
 
 
         <LinearLayout
+            android:id="@+id/facility2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -316,6 +319,7 @@
 
         <!-- 글 목록 1 -->
         <LinearLayout
+            android:id="@+id/informationshare1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -357,6 +361,7 @@
 
 
         <LinearLayout
+            android:id="@+id/informationshare2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -434,6 +439,7 @@
 
         <!-- 글 목록 1 -->
         <LinearLayout
+            android:id="@+id/together1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -469,6 +475,12 @@
             android:background="@drawable/item_accountshare"
             android:layout_marginTop="10dp"/>
 
+        <LinearLayout
+            android:id="@+id/together2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -493,6 +505,8 @@
             android:text="전농동 23.08.14 조회 484 댓글 48"
             android:textSize="8sp"
             android:textColor="#61646B"/>
+
+        </LinearLayout>
     </LinearLayout>
         <ImageView
             android:layout_width="match_parent"
@@ -520,6 +534,7 @@
 
             <!-- 글 목록 1 -->
             <LinearLayout
+                android:id="@+id/pass1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -555,6 +570,11 @@
                 android:background="@drawable/item_accountshare"
                 android:layout_marginTop="10dp"/>
 
+            <LinearLayout
+                android:id="@+id/pass2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -579,6 +599,7 @@
                 android:text="전농동 23.08.14 조회 484 댓글 48"
                 android:textSize="8sp"
                 android:textColor="#61646B"/>
+            </LinearLayout>
         </LinearLayout>
         <ImageView
             android:layout_width="match_parent"
@@ -606,6 +627,7 @@
 
             <!-- 글 목록 1 -->
             <LinearLayout
+                android:id="@+id/etc1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -641,6 +663,12 @@
                 android:background="@drawable/item_accountshare"
                 android:layout_marginTop="10dp"/>
 
+            <LinearLayout
+                android:id="@+id/etc2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -665,6 +693,7 @@
                 android:text="전농동 23.08.14 조회 484 댓글 48"
                 android:textSize="8sp"
                 android:textColor="#61646B"/>
+            </LinearLayout>
         </LinearLayout>
 </FrameLayout>
 </ScrollView>
