@@ -30,6 +30,16 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.goDongnae.setOnClickListener {
+            val intent = Intent(getActivity(), DongnaeInformationActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.goAccountbook.setOnClickListener {
+            val intent = Intent(getActivity(), AccountbookActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
         return binding.root

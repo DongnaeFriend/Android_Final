@@ -116,7 +116,7 @@
             android:id="@+id/btn_question"
             android:layout_width="110sp"
             android:layout_height="40sp"
-            android:text="질문/요청"
+            android:text="소통해요"
             android:textSize="15sp"
             app:layout_constraintTop_toBottomOf="@id/btn_restaurant"
             android:layout_marginTop="7sp"

@@ -36,7 +36,8 @@ class AccountbookDetailFragment : Fragment() {
     private val PaymentListData = mutableListOf<PaymentListData>()
     private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
     private val api: RetrofitInterfaceTommy = retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
-    private val authToken = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
+    //private val authToken = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
+    private val authToken ="eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5Mjk1MzQxMCwiZXhwIjoxNjk0MTYzMDEwfQ.VYuDz4f5lHS8cdkjR4_-YNX9LUzfcMJIMrI_SegYFXJSf5Nch5qNOcoKPWfgq_TvdZOTqXn5chFKpBuks1q4hg"
 
     var Year : Int = 0
     var Month : Int = 0
@@ -125,7 +126,7 @@ class AccountbookDetailFragment : Fragment() {
                             binding.constList5.visibility = View.GONE
                             data0 = data[0].toString()
 
-                            var Data0 = data0.split(",")
+                            var Data0 = data0.split(",",")")
 
                             var type0 = Data0[1]
                             var category0 = Data0[2]
@@ -250,7 +251,7 @@ class AccountbookDetailFragment : Fragment() {
 
                             data1 = data[1].toString()
 
-                            var Data1 = data1.split(",")
+                            var Data1 = data1.split(",",")")
 
                             var type1 = Data1[1]
                             var category1 = Data1[2]
@@ -372,7 +373,7 @@ class AccountbookDetailFragment : Fragment() {
 
                             data2 = data[2].toString()
 
-                            var Data2 = data2.split(",")
+                            var Data2 = data2.split(",",")")
 
                             var type2 = Data2[1]
                             var category2 = Data2[2]
@@ -494,7 +495,7 @@ class AccountbookDetailFragment : Fragment() {
 
                             data3 = data[3].toString()
 
-                            var Data3 = data3.split(",")
+                            var Data3 = data3.split(",",")")
 
                             var type3 = Data3[1]
                             var category3 = Data3[2]
@@ -615,7 +616,7 @@ class AccountbookDetailFragment : Fragment() {
 
                             data4 = data[4].toString()
 
-                            var Data4 = data4.split(",")
+                            var Data4 = data4.split(",",")")
 
                             var type4 = Data4[1]
                             var category4 = Data4[2]
@@ -903,7 +904,7 @@ class AccountbookDetailFragment : Fragment() {
                                 Memo0 = "메모 없음"
                             }
                             else {
-                                var Split = memo0.split("=")
+                                var Split = memo0.split("=",")")
                                 Memo0 = Split[1]
                             }
 
@@ -1025,7 +1026,7 @@ class AccountbookDetailFragment : Fragment() {
                                 Memo1 = "메모 없음"
                             }
                             else {
-                                var Split = memo1.split("=")
+                                var Split = memo1.split("=",")")
                                 Memo1 = Split[1]
                             }
                             binding.tvListmemo2.text = Memo1
@@ -1145,7 +1146,7 @@ class AccountbookDetailFragment : Fragment() {
                                 Memo2 = "메모 없음"
                             }
                             else {
-                                var Split = memo2.split("=")
+                                var Split = memo2.split("=",")")
                                 Memo2 = Split[1]
                             }
                             binding.tvListmemo3.text = Memo2
@@ -1265,7 +1266,7 @@ class AccountbookDetailFragment : Fragment() {
                                 Memo3 = "메모 없음"
                             }
                             else {
-                                var Split = memo3.split("=")
+                                var Split = memo3.split("=",")")
                                 Memo3 = Split[1]
                             }
                             binding.tvListmemo4.text = Memo3
@@ -1385,7 +1386,7 @@ class AccountbookDetailFragment : Fragment() {
                                 Memo4 = "메모 없음"
                             }
                             else {
-                                var Split = memo4.split("=")
+                                var Split = memo4.split("=",")")
                                 Memo4 = Split[1]
                             }
 

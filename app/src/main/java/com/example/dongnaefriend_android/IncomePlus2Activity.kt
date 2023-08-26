@@ -18,7 +18,7 @@ class IncomePlus2Activity : AppCompatActivity() {
         var month = intent.getIntExtra("month",100).toInt()
         var day = intent.getIntExtra("day",100).toInt()
 
-        var memo = binding.edittextIncomeplusmemo.toString()
+        var memo = binding.edittextIncomeplusmemo.text.toString()
 
         //닫기 버튼
         binding.imageviewIncomeclose2.setOnClickListener{
@@ -35,6 +35,8 @@ class IncomePlus2Activity : AppCompatActivity() {
         //지출내역 선택
         binding.imageviewAccountcategorySalery.setOnClickListener{
             val intent = Intent(this,IncomePlus3Activity::class.java)
+            var memo = binding.edittextIncomeplusmemo.text.toString()
+
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",15)
             intent.putExtra("year",year)
@@ -46,6 +48,8 @@ class IncomePlus2Activity : AppCompatActivity() {
         }
         binding.imageviewAccountcategoryAllowance.setOnClickListener{
             val intent = Intent(this,IncomePlus3Activity::class.java)
+            var memo = binding.edittextIncomeplusmemo.text.toString()
+
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",16)
             intent.putExtra("year",year)
@@ -56,6 +60,8 @@ class IncomePlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryCarryover.setOnClickListener{
+            var memo = binding.edittextIncomeplusmemo.text.toString()
+
             val intent = Intent(this,IncomePlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",17)
@@ -67,6 +73,8 @@ class IncomePlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryWithdraw.setOnClickListener{
+            var memo = binding.edittextIncomeplusmemo.text.toString()
+
             val intent = Intent(this,IncomePlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",18)
@@ -78,6 +86,8 @@ class IncomePlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryEtc.setOnClickListener{
+            var memo = binding.edittextIncomeplusmemo.text.toString()
+
             val intent = Intent(this,IncomePlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",19)

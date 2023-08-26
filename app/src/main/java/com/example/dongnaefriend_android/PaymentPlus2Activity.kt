@@ -3,6 +3,7 @@ package com.example.dongnaefriend_android
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.dongnaefriend_android.databinding.ActivityPaymentPlus2Binding
 
 private lateinit var binding:ActivityPaymentPlus2Binding
@@ -19,9 +20,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
         var month = intent.getIntExtra("month",100).toInt()
         var day = intent.getIntExtra("day",100).toInt()
 
-        var memo = binding.edittextPaymentplusmemo.toString()
+        var memo = binding.edittextPaymentplusmemo.text.toString()
 
-        binding.tvDay.text = "$year$month$day"
 
 
 
@@ -40,6 +40,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
 
         //지출내역 선택
         binding.imageviewAccountcategoryFood.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",0)
@@ -51,6 +53,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategorySnack.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",1)
@@ -61,6 +65,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryMart.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",2)
@@ -71,6 +77,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryAlchol.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",3)
@@ -81,6 +89,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryShopping.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",4)
@@ -91,6 +101,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryHobby.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",5)
@@ -101,6 +113,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryHealth.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",6)
@@ -111,6 +125,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryLiving.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",7)
@@ -121,6 +137,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryFund.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",8)
@@ -131,6 +149,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryBeauty.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",9)
@@ -141,6 +161,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryTransport.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",10)
@@ -151,6 +173,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryTrip.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",11)
@@ -161,6 +185,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryEducation.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",12)
@@ -171,6 +197,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryBank.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",13)
@@ -181,6 +209,8 @@ class PaymentPlus2Activity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.imageviewAccountcategoryEtc.setOnClickListener{
+            var memo = binding.edittextPaymentplusmemo.text.toString()
+
             val intent = Intent(this,PaymentPlus3Activity::class.java)
             intent.putExtra("moneyAmount",moneyAmount)
             intent.putExtra("category",14)

@@ -187,17 +187,17 @@ class AccountshareFragment : Fragment() {
                 AccountsharePost(
                     R.drawable.img_accountshare_dummy,
                     "냉방비 줄이는 꿀팁", "3", "1","오늘 아침 tv에서 봤는데 에어컨 필터에 먼지가",
-                    "10","3",R.drawable.img2,"꿀팁"
+                    "10","3",R.drawable.item_accountshare_category_untouched,"꿀팁"
                 ),
                 AccountsharePost(
                     R.drawable.img_accountshare_dummy,
                     "유럽 여행 갈까요/말까요", "0", "2","첫 해외여행으로 유럽 여행을 가려는데",
-                    "24","46",R.drawable.img3,"기타"
+                    "24","46",R.drawable.item_accountshare_category_untouched,"기타"
                 ),
                 AccountsharePost(
                     R.drawable.img_accountshare_dummy,
                     "여러분 어떤 가계부 쓰시나요?", "10", "0","동네친구 가계부가 참 좋은 것 같은데",
-                    "50","190",R.drawable.img4,"고민"
+                    "50","190",R.drawable.item_accountshare_category_untouched,"고민"
                 ),
                 AccountsharePost(
                     R.drawable.img_accountshare_dummy,

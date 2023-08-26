@@ -20,7 +20,8 @@ import retrofit2.Retrofit
 
 private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
 private val api: RetrofitInterfaceTommy = retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
-private val authToken = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
+//private val authToken = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
+private val authToken ="eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5Mjk1MzQxMCwiZXhwIjoxNjk0MTYzMDEwfQ.VYuDz4f5lHS8cdkjR4_-YNX9LUzfcMJIMrI_SegYFXJSf5Nch5qNOcoKPWfgq_TvdZOTqXn5chFKpBuks1q4hg"
 
 
 
@@ -39,14 +40,13 @@ class SetBudgetActivity : AppCompatActivity() {
         }
         binding.ivSetBudgetSave.setOnClickListener {
 
-            //var budget = binding.etSetbudget.toString()
-            //var Budget = budget.toInt()
+            var budget = binding.etSetbudget.text.toString()
+            var Budget = budget.toInt()
 
 
-            var budget = 39999
 
             //retrofit통신 - Post
-            api.postBudget(2023,6,budget,"Bearer $authToken").enqueue(object: Callback<Void> {
+            api.postBudget(2023,7,Budget,"Bearer $authToken").enqueue(object: Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>){
                     Log.d("예산설정 성공", "response :")
 

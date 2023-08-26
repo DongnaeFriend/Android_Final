@@ -30,8 +30,9 @@ class DongnaeDetailFragment : Fragment() {
     private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
     private val api: RetrofitInterfaceTommy =
         retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
-    private val authToken =
-        "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
+   // private val authToken =
+   //     "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
+   private val authToken ="eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5Mjk1MzQxMCwiZXhwIjoxNjk0MTYzMDEwfQ.VYuDz4f5lHS8cdkjR4_-YNX9LUzfcMJIMrI_SegYFXJSf5Nch5qNOcoKPWfgq_TvdZOTqXn5chFKpBuks1q4hg"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,14 +87,82 @@ class DongnaeDetailFragment : Fragment() {
         })
 
         if (sequence == "sequence=1000"){
-            binding.reviewTextView.text = "구 바우하우스 주변 24시 식당"
-            binding.reviewContentTextView.text = "알바 퇴근이 늦은데 집가서 요리해먹기 너무 귀찮네요.. \n" +
-                    "구 바우하우스 근처에 24시 식당 괜찮은 곳 추천해주실 수 있나요?국밥은 너무 질려서 ㅠㅠ 기사식당 같은 곳도 괜찮아용!!"
-            binding.infoTextView.text = "4분전 | 조회 22 | 공감 장안동"
-            binding.detailImageView.setImageResource(R.drawable.restaurant_1)
+            //binding.NickTextView.text = ""
+            binding.reviewTextView.text = "남다른 초밥"
+            binding.reviewContentTextView.text = "골목안에 이런집이?\n"+
+            "혼밥하기 쥑이네~\n\n"+"우연히 지나가다 들렸는데 점심특선 9800원\n"+"점심스페셜은 13000원 이건 양이\n"+"좀 많을듯해서 9800원짜리 점심 메뉴 픽!\n\n"+"괜.찮.다!^^\n"
+            binding.infoTextView.text = "4시간전 | 조회 464 | 전농동"
+            binding.detailImageView.setImageResource(R.drawable.restaurant_5)
+            binding.locationTextView.text = "전농동"
+
+        }
+
+        if (sequence == "sequence=1001"){
+            binding.reviewTextView.text = "장안사거리 근처 가족식사 장소 추천드립니다"
+            binding.reviewContentTextView.text = "한정식 집인데 찬도 잘 나오고 괜찮네요!!"
+            binding.infoTextView.text = "3일전 | 조회 464 | 장안동"
+            binding.detailImageView.setImageResource(R.drawable.restaurant_6)
             binding.locationTextView.text = "장안동"
 
         }
+
+        if (sequence == "sequence=1002"){
+            binding.reviewTextView.text = "장한평역 스포애니 같이 등록하실분!"
+            binding.reviewContentTextView.text = "헬스 등록하려 했는데 이벤트가 있네요!" +
+                    "같이 등록하시면 혜택이 있는데 혹시 하실 분 계실까요?"
+            binding.infoTextView.text = "1일전 | 조회 214 | 휘경동"
+            binding.detailImageView.setImageResource(R.drawable.facility_1)
+            binding.locationTextView.text = "휘경동"
+
+        }
+
+        if (sequence == "sequence=1003"){
+            binding.reviewTextView.text = "혹시 전사 근처에 카드 되는 빨래방 있을까요?"
+            binding.reviewContentTextView.text = "건조기 카드로 돌리고 싶은데 아무리 봐도 없네요..."
+            binding.infoTextView.text = "8일전 | 조회 144 | 전농동"
+            binding.detailImageView.setImageResource(R.drawable.facility_2)
+            binding.locationTextView.text = "전농동"
+
+        }
+
+
+        if (sequence == "sequence=1004"){
+            binding.reviewTextView.text = "청년1인가구 재무교육안내"
+            binding.reviewContentTextView.text = "\uD83D\uDD25신청기간: 2023. 9. 6까지\n" +
+                    "\uD83C\uDFC3\u200D♀️교육일시: \n" +
+                    "1차시 2023. 9. 12. 19:00 ~ 21:00\n" +
+                    "2차시 2023. 9. 19. 19:00 ~ 21:00\n" +
+                    "\uD83D\uDCBB 내용:\n" +
+                    "1차시 - 평생월급 국민연금\n" +
+                    "2차시 - 합리적인 경제생활과 금융사기예방\n" +
+                    "\uD83D\uDC65 대상: 서울 생활권 20~40대 청년1인가구(동대문구 생활권 우선지원)\n" +
+                    "\uD83C\uDFD8️ 장소: 동대문구가족센터 4층 다목적강당\n" +
+                    "❓ 문의: 동대문구1인가구지원센터 (070-1234-1234)\n"
+            binding.infoTextView.text = "4일전 | 조회 680 | 전농동"
+            binding.detailImageView.setImageResource(R.drawable.info_1)
+            binding.locationTextView.text = "전농동"
+
+        }
+
+        if (sequence == "sequence=1005"){
+            binding.reviewTextView.text = "동대문오랑 청년 1인가구 집을 고쳐준대요!"
+            binding.reviewContentTextView.text = "동대문구에 거주하는 1인 가구 청년을 대상으로 동대문 오랑에서 주거 개선 서비스를 제공한다고 해요!!\n" +
+                    "\n" +
+                    "1인가구 분들 꼭 챙기시길 \uD83E\uDD70\n" +
+                    "좋은 정보 있어서 공유합니다~\n" +
+                    "\n" +
+                    "22,000원 정도는 부담해야 한다고 해요.\n" +
+                    "그래도최고네요!\n" +
+                    "\n" +
+                    "신청 방법: 구글폼 작성, 홍보물 참고\n" +
+                    "문의: 02.908.1234 매니저 김석주"
+            binding.infoTextView.text = "4일전 | 조회 420 | 전농동"
+            binding.detailImageView.setImageResource(R.drawable.info_2)
+            binding.locationTextView.text = "전농동"
+
+        }
+
+
 
         if (sequence == "sequence=110"){
             binding.reviewTextView.text = "구 바우하우스 주변 24시 식당"

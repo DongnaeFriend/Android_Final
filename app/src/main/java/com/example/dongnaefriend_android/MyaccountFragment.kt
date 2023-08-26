@@ -69,8 +69,8 @@ class MyaccountFragment : Fragment() {
 
     private val retrofit: Retrofit = RetrofitClient.getInstance() // RetrofitClient의 instance 불러오기
     private val api: RetrofitInterfaceTommy = retrofit.create(RetrofitInterfaceTommy::class.java) // retrofit이 interface 구현
-    private val authToken = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
-
+    //private val authToken = "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5MTY1OTYyMCwiZXhwIjoxNjkyODY5MjIwfQ.07mX0VVFwmoo8nrUvEUvPzF1NMzYSSeMGxgazzN7Upis3F9bRYnZ-15odkvfpsLj1nBKVjRCHLREgttkp1EcdQ"
+    private val authToken ="eyJhbGciOiJIUzUxMiJ9.eyJ1c2VySWQiOjUsImlhdCI6MTY5Mjk1MzQxMCwiZXhwIjoxNjk0MTYzMDEwfQ.VYuDz4f5lHS8cdkjR4_-YNX9LUzfcMJIMrI_SegYFXJSf5Nch5qNOcoKPWfgq_TvdZOTqXn5chFKpBuks1q4hg"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -124,7 +124,7 @@ class MyaccountFragment : Fragment() {
 
                     var check = true
 
-                    api.getBudget(2023, 8,"Bearer $authToken").enqueue(object : Callback<BudgetResponse> {
+                    api.getBudget(2023, 7,"Bearer $authToken").enqueue(object : Callback<BudgetResponse> {
                         // 전송 실패
                         override fun onFailure(call: Call<BudgetResponse>, t: Throwable) {
                             Log.d("************", t.message!!)
@@ -151,7 +151,7 @@ class MyaccountFragment : Fragment() {
 
                     })
 
-                    api.getAccountAll(2023, 8,"Bearer $authToken").enqueue(object : Callback<AccountAllResponse> {
+                    api.getAccountAll(2023, 7,"Bearer $authToken").enqueue(object : Callback<AccountAllResponse> {
                         // 전송 실패
                         override fun onFailure(call: Call<AccountAllResponse>, t: Throwable) {
                             Log.d("AccountAll실패", t.message!!)
@@ -170,12 +170,29 @@ class MyaccountFragment : Fragment() {
 
                             //binding.textviewPaymentamount.text = "${decimal.format(response.body()?.expenditure.toString())}원"
                             //binding.tvIncomeAmount.text = "${decimal.format(response.body()?.income.toString())}원"
-                            binding.textviewPaymentamount.text = "${decimal.format(response.body()?.expenditure)}원"
-                            binding.tvIncomeAmount.text = "${decimal.format(response.body()?.income)}원"
+                            //binding.textviewPaymentamount.text = "${decimal.format(response.body()?.expenditure)}원"
+                            binding.textviewPaymentamount.text = "${response.body()?.expenditure}원"
+
+
+                            //binding.tvIncomeAmount.text = "${decimal.format(response.body()?.income.toString())}원"
+                            binding.tvIncomeAmount.text = "${response.body()?.income.toString()}원"
+
+
+                            /*
+                            if (response.body()?.income != null) {
+                                var Income = response.body()?.income!!
+                                binding.tvIncomeAmount.text = "${decimal.format(Income)}원"
+                            }
+                            else {
+                                var Income = 0
+                                binding.tvIncomeAmount.text = "${Income}원"
+                            }
+
+                             */
 
 
                             if (response.body()?.expenditure == null){
-                                binding.tvLeftbudget.text = "이번달 예산은 ${decimal.format(setBudget)}원이고, \n 지출 내역은 없습니다!"
+                                binding.tvLeftbudget.text = "이번달 예산은 ${setBudget}원이고, \n 지출 내역은 없습니다!"
                                 check = false
 
                             }
@@ -186,7 +203,7 @@ class MyaccountFragment : Fragment() {
                             if(check == true) {
                                 if (setBudget < expenditure) {
                                     myAccountText2 =
-                                        "이번 달 예산을 ${decimal.format(abs(setBudget - expenditure))}원 만큼 초과했어요.\n절약이 절실해요"
+                                        "이번 달 예산을 ${abs(setBudget - expenditure)}원 만큼 초과했어요.\n절약이 절실해요\uD83D\uDCB8"
                                     binding.tvLeftbudget.text = myAccountText2
 
                                 } else {
@@ -198,11 +215,11 @@ class MyaccountFragment : Fragment() {
 
                                     var budgetUntilToday = setBudget / 30 * day
                                     if (budgetUntilToday >= expenditure) {
-                                        myAccountText2 = "너무 잘하고 있어요!"
+                                        myAccountText2 = "너무 잘하고 있어요!\uD83E\uDD73"
                                     } else {
-                                        myAccountText2 = "조금만 더 절약해봐요!"
+                                        myAccountText2 = "조금만 더 절약해봐요!\uD83D\uDE48"
                                     }
-                                    myAccountText1 = "이번달 남은 예산은 ${decimal.format(setBudget - expenditure)}원이에요"
+                                    myAccountText1 = "이번달 남은 예산은 ${setBudget - expenditure}원이에요"
                                     binding.tvLeftbudget.text = "${myAccountText1} \n ${myAccountText2}"
                                 }
                             }
@@ -594,6 +611,8 @@ class MyaccountFragment : Fragment() {
                                 }
                                 else{binding.tvAmountEtc.text = "${Price}원"}
                             }
+
+
 
                             //원형 차트 라이브러리 https://youngest-programming.tistory.com/273 참고
                             binding.chart.setUsePercentValues(true)
@@ -1262,6 +1281,8 @@ class MyaccountFragment : Fragment() {
 
 
 
+
+
         binding.tvMyacountDetail.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(com.example.dongnaefriend_android.R.id.container_fragment,AccountbookDetailFragment()).commit()
             (activity as AccountbookActivity).ForAccountDetailGone()
@@ -1271,4 +1292,7 @@ class MyaccountFragment : Fragment() {
         return binding.root
     }
 
+
+
 }
+

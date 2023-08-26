@@ -35,7 +35,7 @@
             android:layout_height="42dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="    고민    " />
+            android:text="    고민    " />/
 
         <TextView
             android:id="@+id/tv_accountshare_buy"

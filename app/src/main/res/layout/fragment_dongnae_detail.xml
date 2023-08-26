@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.108" />
 
     <TextView
-        android:id="@+id/doolyTextView"
+        android:id="@+id/NickTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="13.17dp"
